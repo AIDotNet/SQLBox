@@ -41,7 +41,10 @@ public static class SqlGen
     public static async Task<SqlResult> AskAsync(string question, AskOptions? options = null, CancellationToken ct = default)
     {
         var engine = EnsureDefault();
-        options ??= new AskOptions();
+        if (options == null)
+        {
+            throw new ArgumentNullException(nameof(options), "AskOptions is required. Please provide ConnectionId.");
+        }
 
         var normalized = await engine.InputNormalizer.NormalizeAsync(question, ct);
         var schema = await engine.SchemaProvider.LoadAsync(ct);

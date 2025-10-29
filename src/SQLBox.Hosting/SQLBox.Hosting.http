@@ -1,0 +1,6 @@
+@SQLBox.Hosting_HostAddress = http://localhost:5227
+
+GET {{SQLBox.Hosting_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "setup": "bun install",
+    "postinstall": "echo '✅ Dependencies installed successfully!'"
+  },
+  "installNotes": [
+    "This will install all required dependencies:",
+    "- Zustand (state management)",
+    "- React Query (data fetching)",
+    "- Recharts (charts)",
+    "- Radix UI components (dialog, dropdown, etc.)",
+    "",
+    "Run: bun install"
+  ]
+}
