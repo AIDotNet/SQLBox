@@ -26,6 +26,9 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
+import ConnectionsPage from './pages/ConnectionsPage';
+import ChatPage from './pages/ChatPage';
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -33,10 +36,10 @@ function App() {
         <BrowserRouter>
           <Routes>
             {/* 主页 - 聊天界面 */}
-            <Route path="/" element={<div>Chat Page (TODO)</div>} />
+            <Route path="/" element={<ChatPage />} />
             
             {/* 连接管理页面 */}
-            <Route path="/connections" element={<div>Connections Page (TODO)</div>} />
+            <Route path="/connections" element={<ConnectionsPage />} />
             
             {/* 默认重定向 */}
             <Route path="*" element={<Navigate to="/" replace />} />

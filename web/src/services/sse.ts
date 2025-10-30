@@ -3,7 +3,8 @@ import type {
   SSEMessage,
 } from '../types/message';
 
-const API_BASE = '/api';
+// 开发环境使用后端地址，生产环境使用相对路径
+const API_BASE = import.meta.env.DEV ? 'http://localhost:5227/api' : '/api';
 
 export type SSEMessageHandler = (message: SSEMessage) => void;
 
