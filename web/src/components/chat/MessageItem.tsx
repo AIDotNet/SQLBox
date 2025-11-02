@@ -25,7 +25,7 @@ interface MessageItemV2Props {
  * 新版消息项组件 - 使用统一内容流渲染
  * 支持按接收顺序渲染 text、sql、data、chart、error 等不同类型的内容
  */
-export function MessageItemV2({ message, onDelete, onSelectContext }: MessageItemV2Props) {
+export function MessageItem({ message, onDelete, onSelectContext }: MessageItemV2Props) {
   const isUser = message.role === 'user';
   const isStreaming = message.status === 'streaming';
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);

@@ -224,6 +224,7 @@ public class ChatService(
                         *** REMEMBER ***
                         Your superpower is the generate_sql function. Use it for ALL database-related tasks.
                         Pay attention to conversation history to understand context and follow-up questions.
+                        Do not reply to the user with any SQL code. All SQL statements must be generated through the generate_sql function.
                         """)
                 };
 

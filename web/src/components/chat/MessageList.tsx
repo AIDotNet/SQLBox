@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { MessageItemV2 } from './MessageItemV2';
+import { MessageItem } from './MessageItem';
 import type { ChatMessage } from '@/types/message';
 
 interface MessageListProps {
@@ -46,7 +46,7 @@ export function MessageList({ messages, onDeleteMessage, onSelectContext }: Mess
     <div className="h-full overflow-y-auto">
       <div className="p-4 space-y-6">
         {messages.map((message) => (
-          <MessageItemV2 
+          <MessageItem 
             key={message.id} 
             message={message} 
             onDelete={onDeleteMessage}

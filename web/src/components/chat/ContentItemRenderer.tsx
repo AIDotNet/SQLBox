@@ -182,6 +182,7 @@ function ChartItemRenderer({ item }: { item: ChartContentItem }) {
 
   try {
     option = item.echartsOption;
+    debugger
     if (typeof option === 'string') {
       function toObject(str: string) {
         return Function('"use strict";return (' + str + ')')();
