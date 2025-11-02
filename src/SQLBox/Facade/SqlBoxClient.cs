@@ -70,7 +70,7 @@ public class SqlBoxClient
 
                             Example of good query for charts:
                             SELECT category AS product_category, SUM(amount) AS total_sales FROM orders GROUP BY category
-                            
+
                             Example of poor query for charts:
                             SELECT id, user_id, order_id, amount FROM orders
 
@@ -273,16 +273,20 @@ public class SqlBoxClient
 
                                         # Data Injection Format
                                         Use `{DATA_PLACEHOLDER}` where the C# code will inject actual data:
-                                        ```json
+                                        ```js
                                         {
-                                          "xAxis": {
-                                            "data": {DATA_PLACEHOLDER_X}
-                                          },
-                                          "series": [
-                                            {
-                                              "data": {DATA_PLACEHOLDER_Y}
-                                            }
-                                          ]
+                                        "tooltip": {
+                                          "trigger": "axis",
+                                          "formatter": function(params) { return params[0].name + ': ' + params[0].value; }
+                                        },
+                                        "xAxis": {
+                                          "data": {DATA_PLACEHOLDER_X}
+                                        },
+                                        "series": [
+                                          {
+                                            "data": {DATA_PLACEHOLDER_Y}
+                                          }
+                                        ]
                                         }
                                         ```
                                         Return ONLY the JSON option object, no additional text.
