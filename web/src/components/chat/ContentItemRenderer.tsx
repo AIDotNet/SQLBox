@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import EChartsReact from 'echarts-for-react';
+import * as echarts from 'echarts';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { format } from 'sql-formatter';
@@ -182,16 +183,21 @@ function ChartItemRenderer({ item }: { item: ChartContentItem }) {
 
   try {
     option = item.echartsOption;
-    debugger
     if (typeof option === 'string') {
-      function toObject(str: string) {
-        return Function('"use strict";return (' + str + ')')();
-      }
-      option = toObject(option);
+      // 创建一个函数，将 echarts 作为参数传入，这样字符串代码中可以访问 echarts 对象
+      // eslint-disable-next-line no-new-func
+      const parseFunction = new Function('echarts', '"use strict";return (' + option + ')');
+      option = parseFunction(echarts);
     }
-    
   } catch (error) {
     console.error('Failed to parse ECharts option:', error);
+    return <ErrorItemRenderer item={{
+      id: item.id,
+      type: 'error',
+      code: 'CHART_ERROR',
+      message: '图表配置解析失败',
+      details: error instanceof Error ? error.message : String(error),
+    }} />;
   }
 
   if (!option) {
@@ -199,7 +205,7 @@ function ChartItemRenderer({ item }: { item: ChartContentItem }) {
       id: item.id,
       type: 'error',
       code: 'CHART_ERROR',
-      message: '图表配置解析失败',
+      message: '图表配置为空',
     }} />;
   }
 

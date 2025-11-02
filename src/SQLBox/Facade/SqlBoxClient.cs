@@ -442,12 +442,15 @@ public class SqlBoxClient
 
         try
         {
-            // 将动态结果转换为可序列化的格式
-            var dataJson = JsonSerializer.Serialize(queryResults, new JsonSerializerOptions
+            var option = new JsonSerializerOptions
             {
                 WriteIndented = false,
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-            });
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                // 中文字符不进行转义
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            };
+            // 将动态结果转换为可序列化的格式
+            var dataJson = JsonSerializer.Serialize(queryResults, option);
 
             // 替换各种可能的占位符
             var result = optionTemplate;
