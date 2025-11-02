@@ -16,7 +16,7 @@
       <PackageReference Include="Serilog.Sinks.File" Version="5.0.1" />
       <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
       <!-- OpenAI official .NET SDK for server-side ChatClient and streaming -->
-      <PackageReference Include="OpenAI" Version="2.5.0" />
+      <PackageReference Include="OpenAI" Version="2.6.0" />
     </ItemGroup>
 
     <ItemGroup>

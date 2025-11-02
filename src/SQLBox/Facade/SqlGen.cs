@@ -43,111 +43,6 @@ public static class SqlGen
         }
     }
 
-    public static async Task<SqlResult> AskAsync(string question, AskOptions? options = null, CancellationToken ct = default)
-    {
-        var engine = EnsureDefault();
-        if (options == null)
-        {
-            throw new ArgumentNullException(nameof(options), "AskOptions is required. Please provide ConnectionId.");
-        }
-        if (string.IsNullOrWhiteSpace(options.ConnectionId))
-        {
-            throw new ArgumentException("ConnectionId is required.", nameof(options));
-        }
-        if (engine.ConnectionManager == null)
-        {
-            throw new InvalidOperationException("No IDatabaseConnectionManager configured. Please configure a connection manager before calling AskAsync.");
-        }
-
-        // 1) 解析连接并据此确定方言
-        var dbConn = await engine.ConnectionManager.GetConnectionAsync(options.ConnectionId, ct)
-                    ?? throw new InvalidOperationException($"Connection '{options.ConnectionId}' not found.");
-
-        // 组件校验：确保必要组件已配置（避免默认引擎下的空引用）
-        if (engine.SchemaIndexer == null)
-            throw new InvalidOperationException("No ISchemaIndexer configured. Please configure a schema indexer via SqlGenBuilder.WithSchemaIndexer.");
-        if (engine.SchemaRetriever == null)
-            throw new InvalidOperationException("No ISchemaRetriever configured. Please configure a schema retriever via SqlGenBuilder.WithSchemaRetriever.");
-        if (engine.LlmClient == null)
-            throw new InvalidOperationException("No ILlmClient configured. Please configure an LLM client via SqlGenBuilder.WithLlmClient.");
-
-        var normalized = await engine.InputNormalizer.NormalizeAsync(question, ct);
-        var schema = await engine.SchemaProvider.LoadAsync(ct);
-
-        // 将 Schema 统一绑定到当前请求的 ConnectionId，避免 VectorRetriever 使用 schema.ConnectionId 导致跨连接错配
-        var effectiveSchema = new DatabaseSchema
-        {
-            ConnectionId = options.ConnectionId,
-            Name = schema.Name,
-            Dialect = schema.Dialect,
-            Tables = schema.Tables
-        };
-
-        var dialect = options.Dialect ?? dbConn.DatabaseType ?? effectiveSchema.Dialect;
-
-        var index = await engine.SchemaIndexer.BuildAsync(effectiveSchema, ct);
-        var context = await engine.SchemaRetriever.RetrieveAsync(normalized, effectiveSchema, index, options.TopK, ct);
-
-        // 2) 语义缓存（加入 ConnectionId，避免跨连接误命中）
-        var cacheKey = ComputeCacheKey(normalized, $"{dialect}|{dbConn.Id}", context);
-        if (engine.Cache != null && engine.Cache.TryGet(cacheKey, out var cached))
-        {
-            return cached;
-        }
-
-        var prompt = await engine.PromptAssembler.AssembleAsync(normalized, dialect, context, options, ct);
-        var gen = await engine.LlmClient.GenerateAsync(prompt, dialect, context, ct);
-        gen = await engine.PostProcessor.PostProcessAsync(gen, dialect, ct);
-
-        var validation = await engine.Validator.ValidateAsync(gen.Sql, context, options, ct);
-
-        // Optional simple repair loop (single attempt)
-        if (!validation.IsValid && engine.Repair != null)
-        {
-            var repaired = await engine.Repair.TryRepairAsync(normalized, dialect, context, gen, validation, ct);
-            if (repaired != null)
-            {
-                gen = repaired;
-                validation = await engine.Validator.ValidateAsync(gen.Sql, context, options, ct);
-            }
-        }
-
-        var warnings = validation.Warnings.ToList();
-        if (!validation.IsValid)
-        {
-            warnings.AddRange(validation.Errors.Select(e => $"error: {e}"));
-        }
-
-        // 3) 实际执行SQL：直接在目标数据库上执行查询
-        string? preview = null;
-        if (options.Execute && validation.IsValid)
-        {
-            try
-            {
-                preview = await ExecuteSqlDirectlyAsync(dbConn, gen, dialect, ct);
-            }
-            catch (Exception ex)
-            {
-                warnings.Add($"execution error: {ex.Message}");
-                preview = $"Execution failed: {ex.Message}";
-            }
-        }
-
-        var result = new SqlResult(
-            Sql: gen.Sql,
-            Parameters: gen.Parameters,
-            Dialect: dialect,
-            TouchedTables: validation.TouchedTables,
-            Explanation: options.ReturnExplanation ? BuildExplanation(normalized, context, gen, validation) : string.Empty,
-            Confidence: validation.Confidence,
-            Warnings: warnings.ToArray(),
-            ExecutionPreview: preview
-        );
-
-        engine.Cache?.Set(cacheKey, result, TimeSpan.FromMinutes(10));
-        return result;
-    }
-
     // 初始化或更新指定连接的表向量索引
     // forceRebuild = true 将清空该连接下旧向量并全量重建；false 则仅增量更新过期或缺失的表向量
     public static async Task<int> BuildOrUpdateTableVectorIndexAsync(
@@ -354,7 +249,6 @@ public sealed class SqlGenBuilder
     internal ISchemaIndexer SchemaIndexer { get; private set; }
     internal ISchemaRetriever SchemaRetriever { get; private set; }
     internal IPromptAssembler PromptAssembler { get; private set; } = new DefaultPromptAssembler();
-    internal ILlmClient LlmClient { get; private set; }
     internal ISqlPostProcessor PostProcessor { get; private set; } = new DefaultPostProcessor();
     internal ISqlValidator Validator { get; private set; } = new DefaultSqlValidator();
     internal IAutoRepair? Repair { get; private set; }
@@ -368,7 +262,6 @@ public sealed class SqlGenBuilder
     public SqlGenBuilder WithSchemaIndexer(ISchemaIndexer x) { SchemaIndexer = x; return this; }
     public SqlGenBuilder WithSchemaRetriever(ISchemaRetriever x) { SchemaRetriever = x; return this; }
     public SqlGenBuilder WithPromptAssembler(IPromptAssembler x) { PromptAssembler = x; return this; }
-    public SqlGenBuilder WithLlmClient(ILlmClient x) { LlmClient = x; return this; }
     public SqlGenBuilder WithPostProcessor(ISqlPostProcessor x) { PostProcessor = x; return this; }
     public SqlGenBuilder WithValidator(ISqlValidator x) { Validator = x; return this; }
     public SqlGenBuilder WithRepair(IAutoRepair? x) { Repair = x; return this; }
@@ -383,7 +276,6 @@ public sealed class SqlGenBuilder
         SchemaIndexer,
         SchemaRetriever,
         PromptAssembler,
-        LlmClient,
         PostProcessor,
         Validator,
         Repair,
@@ -401,7 +293,6 @@ public sealed class SqlGenEngine
     public ISchemaIndexer SchemaIndexer { get; }
     public ISchemaRetriever SchemaRetriever { get; }
     public IPromptAssembler PromptAssembler { get; }
-    public ILlmClient LlmClient { get; }
     public ISqlPostProcessor PostProcessor { get; }
     public ISqlValidator Validator { get; }
     public IAutoRepair? Repair { get; }
@@ -416,7 +307,6 @@ public sealed class SqlGenEngine
         ISchemaIndexer schemaIndexer,
         ISchemaRetriever schemaRetriever,
         IPromptAssembler promptAssembler,
-        ILlmClient llmClient,
         ISqlPostProcessor postProcessor,
         ISqlValidator validator,
         IAutoRepair? repair,
@@ -430,7 +320,6 @@ public sealed class SqlGenEngine
         SchemaIndexer = schemaIndexer;
         SchemaRetriever = schemaRetriever;
         PromptAssembler = promptAssembler;
-        LlmClient = llmClient;
         PostProcessor = postProcessor;
         Validator = validator;
         Repair = repair;

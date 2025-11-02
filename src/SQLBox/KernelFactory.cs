@@ -1,4 +1,5 @@
-﻿using Microsoft.SemanticKernel;
+﻿using System.Net;
+using Microsoft.SemanticKernel;
 
 namespace SQLBox
 {
@@ -9,9 +10,19 @@ namespace SQLBox
             string type = "OpenAI")
         {
             var kernelBuilder = Kernel.CreateBuilder();
+            
             if (type == "OpenAI")
             {
-                kernelBuilder.AddOpenAIChatCompletion(model, new Uri(endpoint), apiKey);
+                kernelBuilder.AddOpenAIChatCompletion(model, new Uri(endpoint), apiKey,
+                    httpClient: new HttpClient(new OpenAIHandle()
+                    {
+                        // 启用压缩
+                        AutomaticDecompression = DecompressionMethods.Brotli | DecompressionMethods.GZip |
+                                                 DecompressionMethods.Deflate
+                    })
+                    {
+                        Timeout = TimeSpan.FromSeconds(600)
+                    });
             }
             else if (type == "AzureOpenAI")
             {

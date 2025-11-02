@@ -50,7 +50,6 @@ builder.Services.AddSingleton<IDatabaseConnectionManager>(sp => new InMemoryData
 
 // 注册 AI 提供商管理器和 LLM 客户端工厂
 builder.Services.AddSingleton<IAIProviderManager>(sp => new InMemoryAIProviderManager(providersFile));
-builder.Services.AddSingleton<ILlmClientFactory, DefaultLlmClientFactory>();
 
 // 注册服务
 builder.Services.AddScoped<SQLBox.Hosting.Services.ConnectionService>();

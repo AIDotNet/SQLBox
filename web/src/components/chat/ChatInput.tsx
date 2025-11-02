@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -6,10 +6,18 @@ import { Textarea } from '@/components/ui/textarea';
 interface ChatInputProps {
   onSend: (message: string) => void;
   disabled?: boolean;
+  prefill?: string;
 }
 
-export function ChatInput({ onSend, disabled }: ChatInputProps) {
+export function ChatInput({ onSend, disabled, prefill }: ChatInputProps) {
   const [input, setInput] = useState('');
+
+  useEffect(() => {
+    if (typeof prefill === 'string' && prefill !== input) {
+      setInput(prefill);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [prefill]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

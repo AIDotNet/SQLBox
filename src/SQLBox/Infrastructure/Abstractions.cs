@@ -33,11 +33,6 @@ public interface IPromptAssembler
 
 public sealed record GeneratedSql(string[] Sql, IReadOnlyDictionary<string, object?> Parameters, string[] Tables);
 
-public interface ILlmClient
-{
-    Task<GeneratedSql> GenerateAsync(string prompt, string dialect, SchemaContext schemaContext, CancellationToken ct = default);
-}
-
 public interface ISqlPostProcessor
 {
     Task<GeneratedSql> PostProcessAsync(GeneratedSql input, string dialect, CancellationToken ct = default);

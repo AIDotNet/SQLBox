@@ -1,15 +1,15 @@
 import { useEffect, useRef } from 'react';
-import { MessageItem } from './MessageItem';
+import { MessageItemV2 } from './MessageItemV2';
 import type { ChatMessage } from '@/types/message';
-import { Loader2 } from 'lucide-react';
 
 interface MessageListProps {
   messages: ChatMessage[];
   isStreaming?: boolean;
   onDeleteMessage?: (messageId: string) => void;
+  onSelectContext?: (text: string) => void;
 }
 
-export function MessageList({ messages, isStreaming, onDeleteMessage }: MessageListProps) {
+export function MessageList({ messages, onDeleteMessage, onSelectContext }: MessageListProps) {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,10 +46,11 @@ export function MessageList({ messages, isStreaming, onDeleteMessage }: MessageL
     <div className="h-full overflow-y-auto">
       <div className="p-4 space-y-6">
         {messages.map((message) => (
-          <MessageItem 
+          <MessageItemV2 
             key={message.id} 
             message={message} 
             onDelete={onDeleteMessage}
+            onSelectContext={onSelectContext}
           />
         ))}
         <div ref={bottomRef} />

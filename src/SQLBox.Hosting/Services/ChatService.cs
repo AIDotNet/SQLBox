@@ -13,13 +13,15 @@ using OpenAI.Chat;
 using SQLBox.Model;
 using Microsoft.Data.Sqlite;
 using Dapper;
+using Microsoft.Extensions.AI;
+using OpenAI.Responses;
+using ChatMessage = OpenAI.Chat.ChatMessage;
 
 namespace SQLBox.Hosting.Services;
 
 public class ChatService(
     IDatabaseConnectionManager connectionManager,
     IAIProviderManager providerManager,
-    ILlmClientFactory llmClientFactory,
     SystemSettings settings)
 {
     private static readonly JsonSerializerOptions JsonOptions = new()
@@ -84,9 +86,6 @@ public class ChatService(
                 return;
             }
 
-            // 创建 LLM 客户端（用于生成SQL）
-            var llmClient = llmClientFactory.CreateClient(provider, input.Model);
-
             // 准备索引所需的嵌入与向量存储（强制使用 Sqlite-Vec）
             var embeddingProviderId = settings.EmbeddingProviderId ?? input.ProviderId;
             var embeddingProvider = string.IsNullOrWhiteSpace(embeddingProviderId)
@@ -121,7 +120,6 @@ public class ChatService(
             // 配置 SqlGen：必须使用向量索引器 + 向量检索器 + Sqlite-Vec 存储
             SqlGen.Configure(builder =>
             {
-                builder.WithLlmClient(llmClient);
                 builder.WithConnectionManager(connectionManager);
                 builder.WithSchemaIndexer(new EmbeddingSchemaIndexer(embedder));
                 builder.WithTableVectorStore(vecStore);
@@ -316,13 +314,14 @@ public class ChatService(
                             var args = argsDoc.RootElement;
 
                             // 从function参数中获取question
-                            var question = args.GetProperty("question").GetString() ?? 
-                                          input.Messages.LastOrDefault(m => m.Role.ToLower() == "user")?.Content ?? 
-                                          "未知查询";
+                            var question = args.GetProperty("question").GetString() ??
+                                           input.Messages.LastOrDefault(m => m.Role.ToLower() == "user")?.Content ??
+                                           "未知查询";
 
                             var sqlBoxBuilder = new SqlBoxBuilder();
                             sqlBoxBuilder.WithDatabaseType(SqlType.Sqlite, connection.ConnectionString);
-                            sqlBoxBuilder.WithLLMProvider(input.Model, provider.ApiKey, provider.Endpoint ?? "", "OpenAI");
+                            sqlBoxBuilder.WithLLMProvider(input.Model, provider.ApiKey, provider.Endpoint ?? "",
+                                "OpenAI");
                             sqlBoxBuilder.WithSqlBotSystemPrompt(SqlType.Sqlite);
 
                             var sqlBot = sqlBoxBuilder.Build();
@@ -333,22 +332,33 @@ public class ChatService(
                                 Query = question
                             });
 
-                            // 发送 SQL 块
-                            await SendSqlBlockAsync(context, [result.Sql], []);
-
-                            // 如果有 ECharts 配置，发送图表块
-                            if (!string.IsNullOrEmpty(result.EchartsOption))
+                            foreach (var sqlBoxResult in result)
                             {
-                                var chartBlock = new Dto.ChartBlock
+                                // 发送 SQL 块
+                                await SendSqlBlockAsync(context, [sqlBoxResult.Sql], []);
+                                // 如果有 ECharts 配置，发送图表块
+                                if (!string.IsNullOrEmpty(sqlBoxResult.EchartsOption))
                                 {
-                                    ChartType = "echarts",
-                                    EchartsOption = result.EchartsOption
-                                };
-                                await SendBlockAsync(context, chartBlock);
+                                    var chartBlock = new ChartBlock
+                                    {
+                                        ChartType = "echarts",
+                                        EchartsOption = sqlBoxResult.EchartsOption
+                                    };
+                                    await SendBlockAsync(context, chartBlock);
+                                }
                             }
 
                             messages.Add(ChatMessage.CreateToolMessage(functionCallId,
-                                "Carry outCompletion of execution"));
+                                $"""
+                                 <system-remind> 
+                                 Here is the generated SQL:
+                                 <code>
+                                 {result.Select(r => r.Sql).Aggregate((a, b) => a + "\n" + b)}
+                                 </code>
+                                 Note: The operation has been completed. This is just a reminder.
+                                 </system-remind>
+                                 """
+                            ));
                         }
                         catch (Exception ex)
                         {

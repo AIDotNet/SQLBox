@@ -49,6 +49,58 @@ export interface ContentBlock {
   type: ContentBlockType;
 }
 
+// ============================================
+// 统一内容流类型定义（新架构）
+// ============================================
+
+/** 内容项类型 - 包含所有可能的内容类型 */
+export type ContentItemType = 'text' | 'sql' | 'data' | 'chart' | 'error';
+
+/** 内容项基础接口 */
+export interface ContentItem {
+  id: string;
+  type: ContentItemType;
+}
+
+/** 文本内容项 */
+export interface TextContentItem extends ContentItem {
+  type: 'text';
+  content: string;
+}
+
+/** SQL 内容项 */
+export interface SqlContentItem extends ContentItem {
+  type: 'sql';
+  sql: string;
+  tables: string[];
+  dialect?: string;
+}
+
+/** 数据表格内容项 */
+export interface DataContentItem extends ContentItem {
+  type: 'data';
+  columns: string[];
+  rows: any[][];
+  totalRows: number;
+}
+
+/** 图表内容项 */
+export interface ChartContentItem extends ContentItem {
+  type: 'chart';
+  chartType: string;
+  echartsOption?: string;
+  config: ChartConfig;
+  data: any;
+}
+
+/** 错误内容项 */
+export interface ErrorContentItem extends ContentItem {
+  type: 'error';
+  code: string;
+  message: string;
+  details?: string;
+}
+
 /** SQL 代码块 */
 export interface SqlBlock extends ContentBlock {
   type: 'sql';
@@ -96,12 +148,11 @@ export interface ErrorBlock extends ContentBlock {
 /** 消息状态 */
 export type MessageStatus = 'streaming' | 'complete' | 'error';
 
-/** 聊天消息 */
+/** 聊天消息（使用统一内容流） */
 export interface ChatMessage {
   id: string;
   role: 'user' | 'assistant';
-  content: string;  // 主要文本内容（流式累积）
-  blocks: ContentBlock[];  // 附加的内容块（SQL、数据等）
+  contentItems: ContentItem[];  // 统一内容流：按接收顺序的所有内容（text、sql、data、chart、error）
   timestamp: number;
   status: MessageStatus;
 }

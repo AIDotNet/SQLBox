@@ -2,10 +2,16 @@
 
 public class OpenAIHandle : HttpClientHandler
 {
-    protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request,
+    private static string UserAgent = "SQLBox/" + typeof(OpenAIHandle).Assembly.GetName().Version?.ToString();
+
+    protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request,
         CancellationToken cancellationToken)
     {
-        var response = base.SendAsync(request, cancellationToken);
+        // 重写user-agent
+        request.Headers.UserAgent.Clear();
+        request.Headers.UserAgent.ParseAdd(UserAgent);
+
+        var response = await base.SendAsync(request, cancellationToken);
         return response;
     }
 }

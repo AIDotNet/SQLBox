@@ -1923,3 +1923,1023 @@
 2025-11-02 21:21:28.849 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 281
 2025-11-02 21:21:28.866 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
 2025-11-02 21:21:28.873 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 21:23:06.217 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 21:23:06.222 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /api/chat/completion responded 200 in 97348.3724 ms
+2025-11-02 21:23:06.228 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:5173/api/chat/completion - 200 null text/event-stream 97378.9383ms
+2025-11-02 21:39:26.389 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 21:39:26.390 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 21:39:26.398 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:39:26.412 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 21:39:26.415 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:39:26.425 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:39:26.428 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:39:26.434 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:39:26.439 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:39:26.445 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 21:39:26.454 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 21:39:26.460 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 61.6309 ms
+2025-11-02 21:39:26.494 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 21:39:26.501 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 88.9266 ms
+2025-11-02 21:39:26.512 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:39:26.518 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 128.6193ms
+2025-11-02 21:39:26.606 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 21:39:26.613 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 222.8268ms
+2025-11-02 21:39:26.619 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:39:26.629 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:39:26.646 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:39:26.650 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:39:26.655 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:39:26.659 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 21:39:26.661 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 21:39:26.665 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 153.2165 ms
+2025-11-02 21:39:26.668 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 62.2793 ms
+2025-11-02 21:39:26.677 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:39:26.683 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 228.6048ms
+2025-11-02 21:39:26.688 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 193.4899ms
+2025-11-02 21:39:26.693 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:39:26.712 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:39:26.715 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:39:26.719 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 42.7661 ms
+2025-11-02 21:39:26.721 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 21:39:26.724 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 63.2237ms
+2025-11-02 21:39:26.731 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:39:26.743 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:39:26.747 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:39:26.750 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:39:26.753 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 21.8687 ms
+2025-11-02 21:39:26.759 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 37.8465ms
+2025-11-02 21:39:34.394 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 281
+2025-11-02 21:39:34.400 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 21:39:34.402 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 21:40:44.458 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 21:40:44.461 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /api/chat/completion responded 200 in 70058.8320 ms
+2025-11-02 21:40:44.467 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:5173/api/chat/completion - 200 null text/event-stream 70072.3175ms
+2025-11-02 21:44:44.832 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 21:44:44.838 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:44.841 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:44:44.844 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:44:44.848 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:44.851 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 13.0253 ms
+2025-11-02 21:44:44.857 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 24.881ms
+2025-11-02 21:44:45.097 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 21:44:45.103 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:45.109 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:44:45.112 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:44:45.117 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:45.120 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 17.4498 ms
+2025-11-02 21:44:45.127 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 29.9457ms
+2025-11-02 21:44:45.159 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 21:44:45.167 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:45.172 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:44:45.175 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:44:45.179 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:45.182 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 14.1032 ms
+2025-11-02 21:44:45.187 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 28.2594ms
+2025-11-02 21:44:45.423 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 21:44:45.429 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:45.432 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:44:45.436 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:44:45.439 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:45.442 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 12.8008 ms
+2025-11-02 21:44:45.447 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 23.9075ms
+2025-11-02 21:44:58.467 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 21:44:58.473 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:58.478 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:44:58.481 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:44:58.484 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:58.487 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 14.3732 ms
+2025-11-02 21:44:58.492 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 24.8809ms
+2025-11-02 21:44:58.792 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 21:44:58.799 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:58.802 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 21:44:58.807 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 21:44:58.810 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 21:44:58.813 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 14.5283 ms
+2025-11-02 21:44:58.819 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 26.686ms
+2025-11-02 22:05:02.920 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:05:02.920 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:05:02.956 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:05:02.971 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:05:02.976 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:05:02.980 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:05:02.985 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:05:02.988 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:05:02.995 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:05:03.001 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:05:03.007 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 51.3584 ms
+2025-11-02 22:05:03.005 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:05:03.044 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 123.1289ms
+2025-11-02 22:05:03.035 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:05:03.037 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 65.9659 ms
+2025-11-02 22:05:03.098 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:05:03.115 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:05:03.121 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 200.9669ms
+2025-11-02 22:05:03.135 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:05:03.143 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:05:03.186 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:05:03.196 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:05:03.202 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:05:03.206 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:05:03.209 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 111.2228 ms
+2025-11-02 22:05:03.211 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:05:03.212 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 97.3208 ms
+2025-11-02 22:05:03.218 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 211.5818ms
+2025-11-02 22:05:03.232 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:05:03.236 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 201.2601ms
+2025-11-02 22:05:03.249 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:05:03.261 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:05:03.264 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:05:03.268 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 36.5443 ms
+2025-11-02 22:05:03.269 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:05:03.274 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 62.2508ms
+2025-11-02 22:05:03.281 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:05:03.294 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:05:03.298 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:05:03.302 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:05:03.305 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 23.7928 ms
+2025-11-02 22:05:03.309 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 39.9942ms
+2025-11-02 22:06:18.506 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 254
+2025-11-02 22:06:18.514 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 22:06:18.518 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 22:08:45.747 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 22:08:46.143 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 22:08:46.365 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 22:08:46.374 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 22:08:46.379 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 22:08:46.381 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 22:08:49.385 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:08:49.385 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:08:50.032 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:08:50.032 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:08:50.098 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:08:50.102 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:08:50.108 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:08:50.111 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:08:50.166 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:08:50.166 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:08:50.173 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 143.4014 ms
+2025-11-02 22:08:50.173 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 147.1847 ms
+2025-11-02 22:08:50.182 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:08:50.182 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:08:50.212 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 828.8899ms
+2025-11-02 22:08:50.212 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 826.9942ms
+2025-11-02 22:08:50.212 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:08:50.218 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:08:50.247 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:08:50.249 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:08:50.253 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:08:50.255 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:08:50.258 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:08:50.261 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:08:50.264 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 51.9029 ms
+2025-11-02 22:08:50.266 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:08:50.266 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 48.2079 ms
+2025-11-02 22:08:50.271 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 88.6866ms
+2025-11-02 22:08:50.276 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:08:50.280 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 97.6463ms
+2025-11-02 22:08:50.292 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:08:50.298 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:08:50.301 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:08:50.304 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 27.8563 ms
+2025-11-02 22:08:50.305 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:08:50.308 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 42.1005ms
+2025-11-02 22:08:50.315 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:08:50.325 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:08:50.328 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:08:50.332 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:08:50.335 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 20.2849 ms
+2025-11-02 22:08:50.342 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 36.649ms
+2025-11-02 22:08:53.895 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 254
+2025-11-02 22:08:53.917 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 22:08:53.925 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 22:12:36.349 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 22:12:36.676 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 22:12:36.874 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 22:12:36.881 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 22:12:36.884 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 22:12:36.885 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 22:12:37.937 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:12:37.937 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:12:38.282 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:12:38.282 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:12:38.312 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:12:38.316 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:12:38.319 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:12:38.322 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:12:38.360 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:12:38.360 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:12:38.366 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 84.6850 ms
+2025-11-02 22:12:38.366 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 87.1282 ms
+2025-11-02 22:12:38.370 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:12:38.370 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:12:38.395 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:12:38.397 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 459.804ms
+2025-11-02 22:12:38.397 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 459.8376ms
+2025-11-02 22:12:38.398 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:12:38.402 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:12:38.420 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:12:38.422 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:12:38.424 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:12:38.427 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:12:38.430 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:12:38.431 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:12:38.432 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 37.9901 ms
+2025-11-02 22:12:38.435 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 36.1799 ms
+2025-11-02 22:12:38.439 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:12:38.443 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 72.1241ms
+2025-11-02 22:12:38.445 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 74.8405ms
+2025-11-02 22:12:38.449 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:12:38.462 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:12:38.464 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:12:38.467 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 27.8359 ms
+2025-11-02 22:12:38.468 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:12:38.471 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 39.6359ms
+2025-11-02 22:12:38.475 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:12:38.484 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:12:38.486 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:12:38.489 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:12:38.491 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 15.8170 ms
+2025-11-02 22:12:38.495 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 27.2067ms
+2025-11-02 22:19:08.187 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 246
+2025-11-02 22:19:08.203 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 22:19:08.210 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 22:37:43.750 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 22:37:44.041 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 22:37:44.217 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 22:37:44.228 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 22:37:44.232 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 22:37:44.234 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 22:37:57.599 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:37:57.599 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:37:57.957 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:37:57.957 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:37:58.013 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:37:58.014 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:37:58.019 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:37:58.022 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:37:58.068 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:37:58.068 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:37:58.074 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 120.9519 ms
+2025-11-02 22:37:58.074 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 118.4263 ms
+2025-11-02 22:37:58.079 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:37:58.079 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:37:58.110 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 513.0482ms
+2025-11-02 22:37:58.110 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:37:58.110 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 513.0512ms
+2025-11-02 22:37:58.115 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:37:58.132 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:37:58.141 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:37:58.145 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:37:58.147 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:37:58.151 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:37:58.153 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:37:58.158 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 47.8681 ms
+2025-11-02 22:37:58.158 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:37:58.161 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 45.9971 ms
+2025-11-02 22:37:58.166 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 86.5502ms
+2025-11-02 22:37:58.171 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:37:58.175 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 95.7914ms
+2025-11-02 22:37:58.188 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:37:58.194 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:37:58.197 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:37:58.200 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 28.7660 ms
+2025-11-02 22:37:58.201 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:37:58.204 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 45.9381ms
+2025-11-02 22:37:58.209 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:37:58.218 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:37:58.221 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:37:58.224 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:37:58.227 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 17.4361 ms
+2025-11-02 22:37:58.231 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 29.7503ms
+2025-11-02 22:38:03.861 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 254
+2025-11-02 22:38:03.881 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 22:38:03.888 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 22:38:19.528 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 22:38:19.533 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /api/chat/completion responded 200 in 15644.4040 ms
+2025-11-02 22:38:19.539 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:5173/api/chat/completion - 200 null text/event-stream 15677.9107ms
+2025-11-02 22:38:39.727 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:38:39.736 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:38:39.739 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:38:39.742 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:38:39.746 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:38:39.749 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 13.2956 ms
+2025-11-02 22:38:39.754 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 26.7944ms
+2025-11-02 22:38:39.782 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:38:39.788 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:38:39.792 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:38:39.795 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:38:39.799 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:38:39.802 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 14.0777 ms
+2025-11-02 22:38:39.806 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 24.4612ms
+2025-11-02 22:38:39.847 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:38:39.854 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:38:39.854 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:38:39.858 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:38:39.865 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:38:39.868 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:38:39.872 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:38:39.875 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:38:39.878 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:38:39.883 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:38:39.883 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 29.7752 ms
+2025-11-02 22:38:39.887 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:38:39.894 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:38:39.899 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 51.8092ms
+2025-11-02 22:38:39.902 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 37.4083 ms
+2025-11-02 22:38:39.906 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:38:39.919 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 65.0591ms
+2025-11-02 22:38:39.922 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:38:39.931 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:38:39.934 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 40.0374 ms
+2025-11-02 22:38:39.935 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:38:39.939 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 55.4151ms
+2025-11-02 22:38:39.944 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:38:39.955 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:38:39.958 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:38:39.961 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:38:39.963 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 19.3649 ms
+2025-11-02 22:38:39.967 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 31.9899ms
+2025-11-02 22:38:54.517 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 237
+2025-11-02 22:38:54.523 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 22:38:54.525 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 22:39:56.291 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 22:39:56.295 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /api/chat/completion responded 200 in 61769.7497 ms
+2025-11-02 22:39:56.300 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:5173/api/chat/completion - 200 null text/event-stream 61783.3216ms
+2025-11-02 22:40:53.173 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 22:40:53.465 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 22:40:53.635 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 22:40:53.644 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 22:40:53.652 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 22:40:53.655 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 22:40:59.490 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:40:59.490 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:41:00.026 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:41:00.026 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:41:00.083 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:41:00.084 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:41:00.097 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:41:00.099 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:41:00.159 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:41:00.159 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:41:00.169 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 142.2100 ms
+2025-11-02 22:41:00.171 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 149.9862 ms
+2025-11-02 22:41:00.208 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:41:00.211 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:41:00.242 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 752.9818ms
+2025-11-02 22:41:00.242 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 753.0127ms
+2025-11-02 22:41:00.240 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:41:00.247 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:41:00.270 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:41:00.274 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:41:00.276 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:41:00.279 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:41:00.282 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:41:00.284 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:41:00.286 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:41:00.287 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 46.5482 ms
+2025-11-02 22:41:00.289 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 42.2391 ms
+2025-11-02 22:41:00.295 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:41:00.299 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 90.4435ms
+2025-11-02 22:41:00.304 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 92.8145ms
+2025-11-02 22:41:00.309 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:41:00.323 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:41:00.325 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:41:00.328 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 33.0812 ms
+2025-11-02 22:41:00.330 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:41:00.332 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 45.6917ms
+2025-11-02 22:41:00.351 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:41:00.361 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:41:00.364 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:41:00.367 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:41:00.370 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 19.1560 ms
+2025-11-02 22:41:00.374 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 44.3715ms
+2025-11-02 22:41:02.452 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 237
+2025-11-02 22:41:02.468 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 22:41:02.474 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 22:45:19.346 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 22:45:19.625 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 22:45:19.798 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 22:45:19.807 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 22:45:19.809 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 22:45:19.811 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 22:45:21.889 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:45:21.889 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:45:22.212 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:45:22.212 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:45:22.245 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:45:22.247 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:45:22.251 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:45:22.254 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:45:22.299 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:45:22.299 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:45:22.305 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 97.5265 ms
+2025-11-02 22:45:22.305 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 95.2120 ms
+2025-11-02 22:45:22.311 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:45:22.311 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 22:45:22.338 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 450.2856ms
+2025-11-02 22:45:22.338 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 449.7805ms
+2025-11-02 22:45:22.344 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:45:22.348 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:45:22.369 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:45:22.374 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:45:22.377 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:45:22.380 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:45:22.383 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:45:22.387 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 22:45:22.388 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:45:22.389 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 45.1634 ms
+2025-11-02 22:45:22.393 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 44.4037 ms
+2025-11-02 22:45:22.398 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:45:22.402 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 90.9225ms
+2025-11-02 22:45:22.406 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 95.0488ms
+2025-11-02 22:45:22.411 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:45:22.425 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:45:22.427 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:45:22.430 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 32.3433 ms
+2025-11-02 22:45:22.432 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 22:45:22.435 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 46.469ms
+2025-11-02 22:45:22.440 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:45:22.449 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 22:45:22.451 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 22:45:22.453 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 22:45:22.457 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 16.5405 ms
+2025-11-02 22:45:22.461 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 28.8157ms
+2025-11-02 22:45:25.766 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 237
+2025-11-02 22:45:25.809 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 22:45:25.835 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:02:22.935 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:02:23.200 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:02:23.386 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 23:02:23.393 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 23:02:23.396 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 23:02:23.398 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 23:02:42.739 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:02:42.738 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:02:43.043 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:02:43.043 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:02:43.075 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:02:43.079 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:02:43.081 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:02:43.086 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:02:43.134 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:02:43.134 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:02:43.142 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 101.5802 ms
+2025-11-02 23:02:43.142 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 98.6255 ms
+2025-11-02 23:02:43.143 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:02:43.143 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:02:43.173 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:02:43.174 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 435.5227ms
+2025-11-02 23:02:43.174 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 435.5793ms
+2025-11-02 23:02:43.178 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:02:43.181 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:02:43.206 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:02:43.208 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:02:43.211 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:02:43.214 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:02:43.217 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:02:43.220 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 46.4403 ms
+2025-11-02 23:02:43.222 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:02:43.223 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 45.0310 ms
+2025-11-02 23:02:43.227 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 83.739ms
+2025-11-02 23:02:43.232 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:02:43.236 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 92.7417ms
+2025-11-02 23:02:43.249 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:02:43.255 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:02:43.357 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:02:43.360 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 128.0509 ms
+2025-11-02 23:02:43.363 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:02:43.374 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 151.5794ms
+2025-11-02 23:02:43.417 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:02:43.423 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:02:43.425 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:02:43.456 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:02:43.459 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 41.2799 ms
+2025-11-02 23:02:43.462 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 99.2852ms
+2025-11-02 23:02:45.083 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 237
+2025-11-02 23:02:45.097 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:02:45.104 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:03:48.111 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:03:48.376 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:03:48.550 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 23:03:48.557 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 23:03:48.561 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 23:03:48.563 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 23:03:53.118 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:03:53.118 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:03:53.503 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:03:53.503 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:03:53.534 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:03:53.538 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:03:53.540 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:03:53.542 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:03:53.589 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:03:53.589 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:03:53.595 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 93.2686 ms
+2025-11-02 23:03:53.595 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 96.1550 ms
+2025-11-02 23:03:53.597 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:03:53.597 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:03:53.626 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:03:53.628 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 509.8404ms
+2025-11-02 23:03:53.628 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 509.8743ms
+2025-11-02 23:03:53.630 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:03:53.664 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:03:53.681 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:03:53.684 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:03:53.686 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:03:53.688 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:03:53.690 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:03:53.692 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:03:53.693 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 67.0560 ms
+2025-11-02 23:03:53.696 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 65.7521 ms
+2025-11-02 23:03:53.700 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:03:53.704 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 106.8499ms
+2025-11-02 23:03:53.707 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 110.1142ms
+2025-11-02 23:03:53.711 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:03:53.724 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:03:53.726 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:03:53.729 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 28.3211 ms
+2025-11-02 23:03:53.730 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:03:53.732 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 39.8165ms
+2025-11-02 23:03:53.737 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:03:53.745 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:03:53.747 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:03:53.750 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:03:53.752 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 14.9669 ms
+2025-11-02 23:03:53.756 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 25.2147ms
+2025-11-02 23:03:56.550 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 237
+2025-11-02 23:03:56.566 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:03:56.572 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:05:25.350 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:05:25.658 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:05:25.848 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 23:05:25.857 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 23:05:25.860 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 23:05:25.862 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 23:09:11.379 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:09:11.670 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:09:11.863 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 23:09:11.870 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 23:09:11.873 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 23:09:11.876 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 23:09:22.077 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:09:22.077 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:09:22.390 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:09:22.390 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:09:22.450 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:09:22.453 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:09:22.458 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:09:22.460 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:09:22.512 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:09:22.512 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:09:22.519 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 129.1774 ms
+2025-11-02 23:09:22.519 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 131.8696 ms
+2025-11-02 23:09:22.525 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:09:22.525 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:09:22.551 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:09:22.554 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:09:22.553 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 476.5269ms
+2025-11-02 23:09:22.553 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 476.5114ms
+2025-11-02 23:09:22.558 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:09:22.560 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:09:22.578 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:09:22.580 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:09:22.582 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:09:22.584 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:09:22.586 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 35.8022 ms
+2025-11-02 23:09:22.588 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:09:22.589 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 34.8698 ms
+2025-11-02 23:09:22.593 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 68.1404ms
+2025-11-02 23:09:22.599 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:09:22.602 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 77.1641ms
+2025-11-02 23:09:22.611 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:09:22.617 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:09:22.619 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:09:22.622 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 23.0158 ms
+2025-11-02 23:09:22.623 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:09:22.626 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 37.5787ms
+2025-11-02 23:09:22.631 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:09:22.641 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:09:22.643 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:09:22.646 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:09:22.648 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 17.8118 ms
+2025-11-02 23:09:22.652 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 29.0993ms
+2025-11-02 23:09:28.636 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 258
+2025-11-02 23:09:28.651 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:09:28.660 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:10:30.127 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:10:30.405 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:10:30.586 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 23:10:30.593 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 23:10:30.597 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 23:10:30.600 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 23:10:50.201 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:10:50.201 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:10:50.499 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:10:50.499 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:10:50.567 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:10:50.570 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:10:50.574 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:10:50.576 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:10:50.621 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:10:50.621 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:10:50.628 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 131.9140 ms
+2025-11-02 23:10:50.628 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 129.5795 ms
+2025-11-02 23:10:50.635 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:10:50.635 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:10:50.662 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:10:50.664 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 462.5235ms
+2025-11-02 23:10:50.664 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 462.5209ms
+2025-11-02 23:10:50.667 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:10:50.669 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:10:50.687 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:10:50.689 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:10:50.691 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:10:50.694 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:10:50.697 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:10:50.698 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:10:50.699 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 36.9886 ms
+2025-11-02 23:10:50.702 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 34.8396 ms
+2025-11-02 23:10:50.706 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:10:50.709 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 74.4619ms
+2025-11-02 23:10:50.712 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 77.6716ms
+2025-11-02 23:10:50.717 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:10:50.728 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:10:50.730 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:10:50.733 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 26.7338 ms
+2025-11-02 23:10:50.734 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:10:50.737 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 38.5525ms
+2025-11-02 23:10:50.742 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:10:50.750 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:10:50.752 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:10:50.755 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:10:50.757 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 15.4376 ms
+2025-11-02 23:10:50.761 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 26.9096ms
+2025-11-02 23:10:56.151 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 258
+2025-11-02 23:10:56.168 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:10:56.177 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:12:43.157 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:12:43.451 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:12:43.635 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 23:12:43.642 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 23:12:43.646 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 23:12:43.647 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 23:12:53.777 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:12:53.777 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:12:54.124 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:12:54.124 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:12:54.156 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:12:54.156 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:12:54.162 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:12:54.163 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:12:54.209 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:12:54.209 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:12:54.216 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 91.2748 ms
+2025-11-02 23:12:54.216 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 94.2632 ms
+2025-11-02 23:12:54.218 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:12:54.219 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:12:54.243 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:12:54.243 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 467.0273ms
+2025-11-02 23:12:54.243 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 467.0356ms
+2025-11-02 23:12:54.249 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:12:54.252 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:12:54.271 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:12:54.274 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:12:54.276 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:12:54.279 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:12:54.281 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:12:54.282 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:12:54.283 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 40.4667 ms
+2025-11-02 23:12:54.285 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 36.3620 ms
+2025-11-02 23:12:54.289 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:12:54.293 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 75.021ms
+2025-11-02 23:12:54.297 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 77.8293ms
+2025-11-02 23:12:54.301 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:12:54.315 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:12:54.318 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:12:54.320 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 30.9648 ms
+2025-11-02 23:12:54.321 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:12:54.324 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 41.8859ms
+2025-11-02 23:12:54.329 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:12:54.337 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:12:54.339 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:12:54.342 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:12:54.344 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 15.4928 ms
+2025-11-02 23:12:54.347 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 26.1978ms
+2025-11-02 23:12:58.691 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 258
+2025-11-02 23:12:58.709 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:12:58.718 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:13:06.998 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:13:07.002 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /api/chat/completion responded 200 in 8284.1365 ms
+2025-11-02 23:13:07.007 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:5173/api/chat/completion - 200 null text/event-stream 8316.5604ms
+2025-11-02 23:13:40.147 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:13:40.156 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:13:40.159 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:13:40.165 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:13:40.172 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:13:40.175 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 19.3341 ms
+2025-11-02 23:13:40.182 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 34.3853ms
+2025-11-02 23:13:40.197 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:13:40.204 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:13:40.208 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:13:40.211 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:13:40.214 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:13:40.219 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 15.4802 ms
+2025-11-02 23:13:40.225 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 28.4621ms
+2025-11-02 23:13:40.267 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:13:40.267 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:13:40.275 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:13:40.294 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:13:40.300 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:13:40.304 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:13:40.306 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:13:40.311 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:13:40.314 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:13:40.320 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:13:40.324 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:13:40.325 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 49.9309 ms
+2025-11-02 23:13:40.328 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 34.5383 ms
+2025-11-02 23:13:40.336 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:13:40.346 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 79.6187ms
+2025-11-02 23:13:40.353 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 86.1201ms
+2025-11-02 23:13:40.356 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:13:40.384 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:13:40.389 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:13:40.394 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 57.9212 ms
+2025-11-02 23:13:40.398 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 74.7229ms
+2025-11-02 23:13:40.399 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:13:40.413 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:13:40.415 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:13:40.418 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:13:40.422 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:13:40.424 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 11.6511 ms
+2025-11-02 23:13:40.429 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 29.7009ms
+2025-11-02 23:13:47.766 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 258
+2025-11-02 23:13:47.772 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:13:47.775 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:16:34.692 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:16:34.694 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:16:34.702 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:16:34.707 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:16:34.711 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:16:34.714 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:16:34.716 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:16:34.718 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:16:34.721 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:16:34.724 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:16:34.727 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 25.4355 ms
+2025-11-02 23:16:34.729 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 22.0968 ms
+2025-11-02 23:16:34.764 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:16:34.734 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 41.8611ms
+2025-11-02 23:16:34.776 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:16:34.769 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 75.6641ms
+2025-11-02 23:16:34.768 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:16:34.793 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:16:34.807 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:16:34.809 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:16:34.813 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:16:34.816 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:16:34.819 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:16:34.842 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 65.1734 ms
+2025-11-02 23:16:34.874 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:16:34.881 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 116.8821ms
+2025-11-02 23:16:34.887 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 80.2597 ms
+2025-11-02 23:16:35.004 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:16:35.164 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 396.1213ms
+2025-11-02 23:16:35.170 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:16:35.183 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:16:35.185 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:16:35.188 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:16:35.191 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 21.4436 ms
+2025-11-02 23:16:35.192 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:16:35.195 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 190.5205ms
+2025-11-02 23:16:35.200 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:16:35.208 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:16:35.211 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:16:35.285 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:16:35.413 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 190.4522 ms
+2025-11-02 23:16:36.079 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 832.3968ms
+2025-11-02 23:18:56.725 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:18:57.035 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:18:57.240 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 23:18:57.248 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 23:18:57.251 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 23:18:57.253 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 23:19:00.204 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 258
+2025-11-02 23:19:00.494 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:19:00.507 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:19:06.706 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:19:06.714 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /api/chat/completion responded 200 in 6207.1521 ms
+2025-11-02 23:19:06.759 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:5173/api/chat/completion - 200 null text/event-stream 6551.6405ms
+2025-11-02 23:20:21.945 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 258
+2025-11-02 23:20:21.950 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:20:21.951 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:20:24.502 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:20:24.506 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /api/chat/completion responded 200 in 2554.3680 ms
+2025-11-02 23:20:24.511 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:5173/api/chat/completion - 200 null text/event-stream 2565.8116ms
+2025-11-02 23:20:34.775 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 258
+2025-11-02 23:20:34.781 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:20:34.783 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:25:51.834 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:25:52.165 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:25:52.361 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 23:25:52.370 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 23:25:52.375 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 23:25:52.377 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 23:25:58.845 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:25:58.845 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:25:59.185 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:25:59.185 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:25:59.224 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:25:59.227 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:25:59.231 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:25:59.233 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:25:59.282 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:25:59.282 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:25:59.290 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 106.5994 ms
+2025-11-02 23:25:59.290 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 109.2646 ms
+2025-11-02 23:25:59.296 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:25:59.296 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:25:59.329 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:25:59.330 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 486.0506ms
+2025-11-02 23:25:59.330 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 486.0478ms
+2025-11-02 23:25:59.333 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:25:59.338 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:25:59.381 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:25:59.385 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:25:59.389 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:25:59.393 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:25:59.395 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:25:59.397 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 68.4394 ms
+2025-11-02 23:25:59.399 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 66.2427 ms
+2025-11-02 23:25:59.399 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:25:59.403 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 106.6196ms
+2025-11-02 23:25:59.406 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 109.9577ms
+2025-11-02 23:25:59.411 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:25:59.427 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:25:59.430 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:25:59.432 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:25:59.435 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 23.8663 ms
+2025-11-02 23:25:59.436 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:25:59.439 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 39.7662ms
+2025-11-02 23:25:59.444 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:25:59.453 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:25:59.455 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:25:59.458 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:25:59.460 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 16.3562 ms
+2025-11-02 23:25:59.464 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 28.3433ms
+2025-11-02 23:26:02.707 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 258
+2025-11-02 23:26:02.723 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:26:02.730 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:26:06.711 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:26:06.715 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /api/chat/completion responded 200 in 3985.0006 ms
+2025-11-02 23:26:06.721 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:5173/api/chat/completion - 200 null text/event-stream 4013.7583ms
+2025-11-02 23:26:16.682 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 239
+2025-11-02 23:26:16.688 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:26:16.690 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:29:45.528 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:29:45.532 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:29:45.560 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:29:45.567 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:29:45.572 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:29:45.575 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:29:45.578 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:29:45.581 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:29:45.586 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:29:45.589 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:29:45.592 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 32.3206 ms
+2025-11-02 23:29:45.593 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:29:45.659 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 130.5793ms
+2025-11-02 23:29:45.646 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 78.5486 ms
+2025-11-02 23:29:45.638 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:29:45.699 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:29:45.796 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 264.6453ms
+2025-11-02 23:29:45.802 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:29:45.890 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:29:45.896 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:29:45.919 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:29:45.946 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 143.6751 ms
+2025-11-02 23:29:45.932 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:29:45.809 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:29:45.956 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 317.8397ms
+2025-11-02 23:29:45.983 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:29:45.987 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:29:46.000 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:29:46.006 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:29:46.010 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:29:46.014 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 314.6806 ms
+2025-11-02 23:29:46.017 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:29:46.025 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 431.2466ms
+2025-11-02 23:29:46.025 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:29:46.030 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 47.0723 ms
+2025-11-02 23:29:46.078 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:29:46.084 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 152.2141ms
+2025-11-02 23:29:46.087 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:29:46.110 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:29:46.119 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:29:46.122 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 43.8768 ms
+2025-11-02 23:29:46.126 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 101.4602ms
+2025-11-02 23:31:57.149 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 239
+2025-11-02 23:31:57.160 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:31:57.190 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:39:59.614 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:40:00.082 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:40:00.428 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 23:40:00.438 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 23:40:00.442 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 23:40:00.445 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 23:40:21.856 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:40:21.856 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:40:22.322 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:40:22.322 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:40:22.364 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:40:22.371 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:40:22.374 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:40:22.380 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:40:22.429 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:40:22.429 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:40:22.437 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 120.8305 ms
+2025-11-02 23:40:22.437 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 117.8280 ms
+2025-11-02 23:40:22.443 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:40:22.443 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:40:22.473 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:40:22.475 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 618.7633ms
+2025-11-02 23:40:22.479 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:40:22.477 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:40:22.475 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 618.7133ms
+2025-11-02 23:40:22.505 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:40:22.505 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:40:22.516 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:40:22.519 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:40:22.522 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 48.9177 ms
+2025-11-02 23:40:22.525 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:40:22.530 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 86.4725ms
+2025-11-02 23:40:22.531 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:40:22.532 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 55.7149 ms
+2025-11-02 23:40:22.544 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:40:22.547 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 104.0135ms
+2025-11-02 23:40:22.553 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:40:22.560 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:40:22.563 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:40:22.566 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 22.0530 ms
+2025-11-02 23:40:22.568 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:40:22.571 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 40.3594ms
+2025-11-02 23:40:22.576 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:40:22.585 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:40:22.588 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:40:22.591 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:40:22.594 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 17.7399 ms
+2025-11-02 23:40:22.598 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 29.0413ms
+2025-11-02 23:40:25.451 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 239
+2025-11-02 23:40:25.469 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:40:25.477 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
+2025-11-02 23:59:17.273 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:59:17.632 +08:00 [WRN] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware The WebRootPath was not found: C:\code\SQLBox\src\SQLBox.Hosting\wwwroot. Static files may be unavailable.
+2025-11-02 23:59:17.849 +08:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://localhost:18080
+2025-11-02 23:59:17.859 +08:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-11-02 23:59:17.863 +08:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-11-02 23:59:17.865 +08:00 [INF] Microsoft.Hosting.Lifetime Content root path: C:\code\SQLBox\src\SQLBox.Hosting
+2025-11-02 23:59:37.027 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:59:37.027 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:59:37.381 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:59:37.381 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:59:37.442 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:59:37.442 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:59:37.450 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:59:37.451 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:59:37.506 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:59:37.506 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:59:37.514 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 135.7781 ms
+2025-11-02 23:59:37.514 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 132.7109 ms
+2025-11-02 23:59:37.517 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:59:37.517 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/connections - null null
+2025-11-02 23:59:37.575 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:59:37.578 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 551.2222ms
+2025-11-02 23:59:37.580 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:59:37.578 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 551.2097ms
+2025-11-02 23:59:37.584 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:59:37.616 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:59:37.616 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:59:37.619 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:59:37.622 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:59:37.624 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:59:37.624 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 49.5659 ms
+2025-11-02 23:59:37.627 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/connections'
+2025-11-02 23:59:37.636 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:59:37.640 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 122.6097ms
+2025-11-02 23:59:37.642 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/connections responded 200 in 62.1116 ms
+2025-11-02 23:59:37.647 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:59:37.656 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/connections - 200 null application/json; charset=utf-8 138.6148ms
+2025-11-02 23:59:37.659 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:59:37.669 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:59:37.673 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 37.0032 ms
+2025-11-02 23:59:37.675 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:5173/api/providers - null null
+2025-11-02 23:59:37.677 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 52.9982ms
+2025-11-02 23:59:37.683 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:59:37.694 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Setting HTTP status code 200.
+2025-11-02 23:59:37.698 +08:00 [INF] Microsoft.AspNetCore.Http.Result.OkObjectResult Writing value of type 'List`1' as Json.
+2025-11-02 23:59:37.701 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'HTTP: GET /api/providers'
+2025-11-02 23:59:37.704 +08:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/providers responded 200 in 20.6422 ms
+2025-11-02 23:59:37.708 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:5173/api/providers - 200 null application/json; charset=utf-8 33.7302ms
+2025-11-02 23:59:42.203 +08:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:5173/api/chat/completion - application/json 239
+2025-11-02 23:59:42.221 +08:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
+2025-11-02 23:59:42.230 +08:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'HTTP: POST /api/chat/completion'
