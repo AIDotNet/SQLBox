@@ -1,8 +1,6 @@
+using System.Collections.Concurrent;
 using SQLAgent.Hosting.Dto;
-using SQLAgent.Entities;
-using SQLAgent.Facade;
 using SQLAgent.Infrastructure;
-using SQLAgent.Infrastructure.Defaults;
 
 namespace SQLAgent.Hosting.Services;
 
@@ -14,7 +12,7 @@ public class VectorIndexService
     private readonly IDatabaseConnectionManager _connMgr;
     private readonly IAIProviderManager _providerMgr;
     private readonly SystemSettings _settings;
-    private readonly System.Collections.Concurrent.ConcurrentDictionary<string, SemaphoreSlim> _indexBuildLocks;
+    private readonly ConcurrentDictionary<string, SemaphoreSlim> _indexBuildLocks;
 
     public VectorIndexService(
         IDatabaseConnectionManager connMgr, 
@@ -24,7 +22,7 @@ public class VectorIndexService
         _connMgr = connMgr;
         _providerMgr = providerMgr;
         _settings = settings;
-        _indexBuildLocks = new System.Collections.Concurrent.ConcurrentDictionary<string, SemaphoreSlim>();
+        _indexBuildLocks = new ConcurrentDictionary<string, SemaphoreSlim>();
     }
 
     /// <summary>
@@ -40,8 +38,6 @@ public class VectorIndexService
         if (embedder == null || vecStore == null)
             return Results.BadRequest(new { message = "Embedding provider is not configured. Please set SystemSettings.EmbeddingProviderId or configure a default provider." });
 
-        ConfigureSqlGen(embedder, vecStore);
-
         var sem = _indexBuildLocks.GetOrAdd(connectionId, _ => new SemaphoreSlim(1, 1));
         if (!await sem.WaitAsync(0))
         {
@@ -51,9 +47,8 @@ public class VectorIndexService
 
         try
         {
-            var updated = await SqlGen.InitializeTableVectorIndexAsync(connectionId);
             var total = await vecStore.CountConnectionVectorsAsync(connectionId);
-            return Results.Ok(new { initialized = total > 0, updatedCount = updated, totalCount = total });
+            return Results.Ok(new { initialized = total > 0, updatedCount = 0, totalCount = total });
         }
         finally
         {
@@ -74,8 +69,6 @@ public class VectorIndexService
         if (embedder == null || vecStore == null)
             return Results.BadRequest(new { message = "Embedding provider is not configured. Please set SystemSettings.EmbeddingProviderId or configure a default provider." });
 
-        ConfigureSqlGen(embedder, vecStore);
-
         var sem = _indexBuildLocks.GetOrAdd(connectionId, _ => new SemaphoreSlim(1, 1));
         if (!await sem.WaitAsync(0))
         {
@@ -85,9 +78,8 @@ public class VectorIndexService
 
         try
         {
-            var updated = await SqlGen.UpdateTableVectorIndexAsync(connectionId);
             var total = await vecStore.CountConnectionVectorsAsync(connectionId);
-            return Results.Ok(new { initialized = total > 0, updatedCount = updated, totalCount = total });
+            return Results.Ok(new { initialized = total > 0, updatedCount = 0, totalCount = total });
         }
         finally
         {
@@ -120,12 +112,4 @@ public class VectorIndexService
         return (embedder, vecStore);
     }
 
-    private void ConfigureSqlGen(IEmbedder embedder, ITableVectorStore vecStore)
-    {
-        SqlGen.Configure(b =>
-        {
-            b.WithConnectionManager(_connMgr);
-            b.WithTableVectorStore(vecStore);
-        });
-    }
 }

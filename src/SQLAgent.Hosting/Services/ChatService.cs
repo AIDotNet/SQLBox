@@ -98,31 +98,7 @@ public class ChatService(
                     $"Embedding provider '{embeddingProviderId}' not found");
                 return;
             }
-
-            var embedder = new OpenAIEmbedder(
-                embeddingProvider.ApiKey,
-                settings.EmbeddingModel,
-                embeddingProvider.Endpoint);
-
-            var vecConfig = new VectorStoreConfig
-            {
-                ConnectionString = settings.VectorDbPath,
-                CollectionName = settings.VectorCollection,
-                AutoCreateCollection = settings.AutoCreateCollection,
-                CacheExpiration = settings.VectorCacheExpireMinutes.HasValue
-                    ? TimeSpan.FromMinutes(settings.VectorCacheExpireMinutes.Value)
-                    : null
-            };
-
-            var vecStore = new SqliteVecTableStore(embedder, vecConfig);
-
-            // 配置 SqlGen：必须使用向量索引器 + 向量检索器 + Sqlite-Vec 存储
-            SqlGen.Configure(builder =>
-            {
-                builder.WithConnectionManager(connectionManager);
-                builder.WithTableVectorStore(vecStore);
-            });
-
+            
             // 使用 OpenAI 官方 SDK 的流式Function Calling与用户交互
             // AI会根据对话内容决定何时调用generate_sql函数
             try
@@ -312,7 +288,7 @@ public class ChatService(
                             var sqlBoxBuilder = new SqlBoxBuilder();
                             sqlBoxBuilder.WithDatabaseType(SqlType.Sqlite, connection.ConnectionString);
                             sqlBoxBuilder.WithLLMProvider(input.Model, provider.ApiKey, provider.Endpoint ?? "",
-                                "OpenAI");
+                                provider.Type);
                             sqlBoxBuilder.WithSqlBotSystemPrompt(SqlType.Sqlite);
 
                             var sqlBot = sqlBoxBuilder.Build();

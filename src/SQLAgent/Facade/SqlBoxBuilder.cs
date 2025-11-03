@@ -1,10 +1,11 @@
-﻿using SQLAgent.Infrastructure;
+﻿using SQLAgent.Entities;
+using SQLAgent.Infrastructure;
 
 namespace SQLAgent.Facade;
 
 public class SqlBoxBuilder
 {
-    private readonly SqlBoxOptions _options = new SqlBoxOptions();
+    private readonly SqlBoxOptions _options = new();
 
     private string _sqlBotSystemPrompt = string.Empty;
 
@@ -18,8 +19,7 @@ public class SqlBoxBuilder
 
         if (string.IsNullOrEmpty(_options.Model) ||
             string.IsNullOrEmpty(_options.APIKey) ||
-            string.IsNullOrEmpty(_options.Endpoint) ||
-            string.IsNullOrEmpty(_options.AIProvider))
+            string.IsNullOrEmpty(_options.Endpoint))
         {
             throw new InvalidOperationException(
                 "LLM provider configuration is incomplete. Please call WithLLMProvider before building the client.");
@@ -44,15 +44,17 @@ public class SqlBoxBuilder
     /// <summary>
     /// 数据库索引
     /// </summary>
-    public void WithIndexes(string databaseIndexTable,
-        string connectionString,
-        string embeddingModel,
+    public void WithIndexes(
+        string connectionString = "Data Source=vector_index.db;",
+        string embeddingModel = "text-embedding-3-small",
+        string databaseIndexTable = "vector_index",
         DatabaseIndexType databaseIndexType = DatabaseIndexType.Sqlite)
     {
         _options.EmbeddingModel = embeddingModel;
         _options.DatabaseIndexConnectionString = connectionString;
         _options.DatabaseIndexTable = databaseIndexTable;
         _options.DatabaseIndexType = databaseIndexType;
+        _options.UseVectorDatabaseIndex = true;
     }
 
     /// <summary>
@@ -62,7 +64,7 @@ public class SqlBoxBuilder
     /// <param name="apiKey">API key for authentication</param>
     /// <param name="endpoint">API endpoint URL</param>
     /// <param name="aiProvider">AI provider type (e.g., OpenAI, AzureOpenAI, CustomOpenAI)</param>
-    public void WithLLMProvider(string model, string apiKey, string endpoint, string aiProvider)
+    public void WithLLMProvider(string model, string apiKey, string endpoint, AIProviderType aiProvider)
     {
         _options.Model = model;
         _options.APIKey = apiKey;

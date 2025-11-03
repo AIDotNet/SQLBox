@@ -37,19 +37,9 @@ public class CompletionInput
     public bool Execute { get; set; } = true;
     
     /// <summary>
-    /// 最大返回行数
-    /// </summary>
-    public int MaxRows { get; set; } = 100;
-    
-    /// <summary>
     /// 是否返回图表建议
     /// </summary>
     public bool SuggestChart { get; set; } = true;
-    
-    /// <summary>
-    /// SQL方言（可选，如果不提供则从连接中推断）
-    /// </summary>
-    public string? Dialect { get; set; }
     
     /// <summary>
     /// AI 提供商 ID（必需）

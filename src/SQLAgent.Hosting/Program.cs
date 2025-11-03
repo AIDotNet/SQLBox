@@ -42,7 +42,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-//// 注册连接管理器（持久化到 connections.json / providers.json）
 var dataRoot = builder.Environment.ContentRootPath;
 var connectionsFile = Path.Combine(dataRoot, "connections.json");
 var providersFile = Path.Combine(dataRoot, "providers.json");
@@ -58,7 +57,6 @@ builder.Services.AddScoped<ProvidersService>();
 builder.Services.AddScoped<ChatService>();
 builder.Services.AddScoped<VectorIndexService>();
 
-// 绑定系统设置（提供默认参数），并尝试从 settings.json 覆盖（实现持久化加载）
 var systemSettings = builder.Configuration.GetSection("SystemSettings").Get<SystemSettings>() ?? new SystemSettings();
 
 var settingsFile = Path.Combine(builder.Environment.ContentRootPath, "settings.json");
@@ -91,9 +89,6 @@ builder.Services.AddSingleton(systemSettings);
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
-
-// Wire SqlGen engine to use the same connection manager instance
-SqlGen.Configure(b => b.WithConnectionManager(app.Services.GetRequiredService<IDatabaseConnectionManager>()));
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())

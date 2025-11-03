@@ -1,4 +1,5 @@
-﻿using SQLAgent.Infrastructure;
+﻿using SQLAgent.Entities;
+using SQLAgent.Infrastructure;
 
 namespace SQLAgent.Facade;
 
@@ -12,7 +13,7 @@ public class SqlBoxOptions
     /// <summary>
     /// AI 提供商
     /// </summary>
-    public string AIProvider { get; set; }
+    public AIProviderType AIProvider { get; set; }
 
     /// <summary>
     /// 终结点
@@ -31,9 +32,15 @@ public class SqlBoxOptions
     public string EmbeddingModel { get; set; }
 
     /// <summary>
+    /// 使用向量数据库索引
+    /// </summary>
+    /// <returns></returns>
+    public bool UseVectorDatabaseIndex { get; set; } = false;
+
+    /// <summary>
     /// 向量数据库表名
     /// </summary>
-    public string DatabaseIndexTable { get; set; } = "vector_index";
+    public string DatabaseIndexTable { get; set; }
 
     /// <summary>
     /// 数据库连接字符串
@@ -52,6 +59,9 @@ public class SqlBoxOptions
     /// </summary>
     public SqlType SqlType { get; set; }
 
+    /// <summary>
+    /// AI 最大输出令牌数
+    /// </summary>
     public int MaxOutputTokens { get; set; } = 3200;
 
     /// <summary>

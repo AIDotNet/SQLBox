@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Data;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using Dapper;
 using Microsoft.Data.Sqlite;
@@ -47,7 +48,13 @@ public class SqlBoxClient
 
         history.AddUserMessage([
             new TextContent(input.Query),
-            new TextContent(PromptConstants.SQLGeneratorSystemRemindPrompt)
+            new TextContent(PromptConstants.SQLGeneratorSystemRemindPrompt),
+            new TextContent($"""
+                             <user-env>
+                             {(_options.AllowWrite ? "Database write operations are allowed." : "Database write operations are NOT allowed.")}
+                             The database type is {_options.SqlType}.
+                             <user-env>
+                             """)
         ]);
 
         await chatCompletion.GetChatMessageContentsAsync(history,
@@ -302,7 +309,7 @@ public class SqlBoxClient
                 WriteIndented = false,
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 // 中文字符不进行转义
-                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
             };
             // 将动态结果转换为可序列化的格式
             var dataJson = JsonSerializer.Serialize(queryResults, option);
@@ -454,7 +461,7 @@ public class SqlBoxClient
                 await connection.OpenAsync();
 
                 string sql;
-                var dp = new Dapper.DynamicParameters();
+                var dp = new DynamicParameters();
 
                 if (keywords.Length == 0)
                 {

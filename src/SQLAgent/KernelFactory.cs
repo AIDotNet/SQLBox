@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using Microsoft.SemanticKernel;
+using SQLAgent.Entities;
 
 namespace SQLAgent
 {
@@ -7,11 +8,11 @@ namespace SQLAgent
     {
         public static Kernel CreateKernel(string model, string apiKey, string endpoint,
             Action<IKernelBuilder>? kernelBuilderAction = null,
-            string type = "OpenAI")
+            AIProviderType type = AIProviderType.OpenAI)
         {
             var kernelBuilder = Kernel.CreateBuilder();
 
-            if (type is "OpenAI" or "Ollama")
+            if (type is AIProviderType.OpenAI or AIProviderType.Ollama)
             {
                 kernelBuilder.AddOpenAIChatCompletion(model, new Uri(endpoint), apiKey,
                     httpClient: new HttpClient(new OpenAIHandle()
@@ -24,7 +25,7 @@ namespace SQLAgent
                         Timeout = TimeSpan.FromSeconds(600)
                     });
             }
-            else if (type == "AzureOpenAI")
+            else if (type == AIProviderType.AzureOpenAI)
             {
                 kernelBuilder.AddAzureOpenAIChatCompletion(model, endpoint, apiKey);
             }
