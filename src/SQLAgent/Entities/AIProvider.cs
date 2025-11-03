@@ -18,7 +18,12 @@ public enum AIProviderType
     /// <summary>
     /// OpenAI 兼容的自定义端点
     /// </summary>
-    CustomOpenAI
+    CustomOpenAI,
+    
+    /// <summary>
+    /// Ollama 本地模型
+    /// </summary>
+    Ollama
 }
 
 /// <summary>

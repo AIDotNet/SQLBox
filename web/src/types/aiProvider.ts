@@ -1,12 +1,13 @@
 /**
  * AI 提供商类型
  */
-export type AIProviderType = "OpenAI" | "AzureOpenAI" | "CustomOpenAI";
+export type AIProviderType = "OpenAI" | "AzureOpenAI" | "CustomOpenAI" | "Ollama";
 
 export const AIProviderTypes = {
   OpenAI: "OpenAI" as const,
   AzureOpenAI: "AzureOpenAI" as const,
   CustomOpenAI: "CustomOpenAI" as const,
+  Ollama: "Ollama" as const,
 };
 
 /**
@@ -56,4 +57,5 @@ export const COMMON_MODELS = {
   OpenAI: ["gpt-4.1", "gpt-4.1-mini", "gpt-5", "gpt-5-mini"],
   AzureOpenAI: ["gpt-4.1", "gpt-4.1-mini", "gpt-5", "gpt-5-mini"],
   CustomOpenAI: ["gpt-4.1", "gpt-4.1-mini", "gpt-5", "gpt-5-mini"],
+  Ollama: ["gpt-oss:20b-cloud"],
 };

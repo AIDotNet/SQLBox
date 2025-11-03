@@ -46,7 +46,7 @@ public class ProvidersService(IAIProviderManager providerManager)
             {
                 return Results.BadRequest(new { message = "API 密钥不能为空" });
             }
-            
+
             if (!Enum.TryParse<AIProviderType>(input.Type, true, out var providerType))
             {
                 return Results.BadRequest(new { message = $"Invalid provider type: {input.Type}" });
@@ -59,8 +59,8 @@ public class ProvidersService(IAIProviderManager providerManager)
                 Type = providerType,
                 Endpoint = input.Endpoint,
                 ApiKey = input.ApiKey,
-                AvailableModels = input.AvailableModels,
-                DefaultModel = input.DefaultModel ?? input.AvailableModels.Split(',').FirstOrDefault()?.Trim(),
+                AvailableModels = string.Join(',', input.AvailableModels),
+                DefaultModel = input.DefaultModel ?? input.AvailableModels.FirstOrDefault()?.Trim(),
                 IsEnabled = input.IsEnabled,
                 ExtraConfig = input.ExtraConfig,
                 CreatedAt = DateTime.UtcNow,
@@ -102,8 +102,8 @@ public class ProvidersService(IAIProviderManager providerManager)
                 Type = providerType,
                 Endpoint = input.Endpoint,
                 ApiKey = string.IsNullOrWhiteSpace(input.ApiKey) ? existing.ApiKey : input.ApiKey, // 如果新密钥为空，保留原密钥
-                AvailableModels = input.AvailableModels,
-                DefaultModel = input.DefaultModel ?? input.AvailableModels.Split(',').FirstOrDefault()?.Trim(),
+                AvailableModels = string.Join(',', input.AvailableModels),
+                DefaultModel = input.DefaultModel ?? input.AvailableModels.FirstOrDefault()?.Trim(),
                 IsEnabled = input.IsEnabled,
                 ExtraConfig = input.ExtraConfig,
                 UpdatedAt = DateTime.UtcNow

@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -19,12 +20,20 @@ public sealed class InMemoryDatabaseConnectionManager : IDatabaseConnectionManag
     private readonly ConcurrentDictionary<string, DatabaseConnection> _connections = new();
     private readonly string? _filePath;
     private readonly SemaphoreSlim _ioLock = new(1, 1);
-    private readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+
+    private readonly JsonSerializerOptions _jsonOptions = new()
+    {
+        WriteIndented = true,
+        // 中文乱码
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
 
     /// <summary>
     /// 纯内存构造（不持久化）
     /// </summary>
-    public InMemoryDatabaseConnectionManager() { }
+    public InMemoryDatabaseConnectionManager()
+    {
+    }
 
     /// <summary>
     /// 指定 JSON 路径的构造（启用持久化）
@@ -86,7 +95,8 @@ public sealed class InMemoryDatabaseConnectionManager : IDatabaseConnectionManag
     }
 
     /// <inheritdoc />
-    public async Task<DatabaseConnection> AddConnectionAsync(DatabaseConnection connection, CancellationToken cancellationToken = default)
+    public async Task<DatabaseConnection> AddConnectionAsync(DatabaseConnection connection,
+        CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(connection.Id))
         {
@@ -103,7 +113,8 @@ public sealed class InMemoryDatabaseConnectionManager : IDatabaseConnectionManag
     }
 
     /// <inheritdoc />
-    public async Task<DatabaseConnection> UpdateConnectionAsync(DatabaseConnection connection, CancellationToken cancellationToken = default)
+    public async Task<DatabaseConnection> UpdateConnectionAsync(DatabaseConnection connection,
+        CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(connection.Id))
         {
@@ -146,7 +157,8 @@ public sealed class InMemoryDatabaseConnectionManager : IDatabaseConnectionManag
     }
 
     /// <inheritdoc />
-    public Task<DatabaseConnection?> GetConnectionAsync(string connectionId, CancellationToken cancellationToken = default)
+    public Task<DatabaseConnection?> GetConnectionAsync(string connectionId,
+        CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(connectionId))
         {
@@ -158,7 +170,8 @@ public sealed class InMemoryDatabaseConnectionManager : IDatabaseConnectionManag
     }
 
     /// <inheritdoc />
-    public Task<IReadOnlyList<DatabaseConnection>> GetAllConnectionsAsync(bool includeDisabled = false, CancellationToken cancellationToken = default)
+    public Task<IReadOnlyList<DatabaseConnection>> GetAllConnectionsAsync(bool includeDisabled = false,
+        CancellationToken cancellationToken = default)
     {
         var connections = _connections.Values
             .Where(c => includeDisabled || c.IsEnabled)

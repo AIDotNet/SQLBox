@@ -22,9 +22,6 @@ public sealed class SystemSettings
     /// <summary>集合名称（表集合名）</summary>
     public string VectorCollection { get; set; } = "table_vectors";
 
-    /// <summary>距离度量方式（Cosine/Euclidean/DotProduct）</summary>
-    public DistanceMetric DistanceMetric { get; set; } = DistanceMetric.Cosine;
-
     /// <summary>是否启动时自动创建集合（默认 true）</summary>
     public bool AutoCreateCollection { get; set; } = true;
 

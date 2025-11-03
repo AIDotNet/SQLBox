@@ -108,7 +108,6 @@ public class ChatService(
             {
                 ConnectionString = settings.VectorDbPath,
                 CollectionName = settings.VectorCollection,
-                DistanceMetric = settings.DistanceMetric,
                 AutoCreateCollection = settings.AutoCreateCollection,
                 CacheExpiration = settings.VectorCacheExpireMinutes.HasValue
                     ? TimeSpan.FromMinutes(settings.VectorCacheExpireMinutes.Value)
@@ -121,17 +120,8 @@ public class ChatService(
             SqlGen.Configure(builder =>
             {
                 builder.WithConnectionManager(connectionManager);
-                builder.WithSchemaIndexer(new EmbeddingSchemaIndexer(embedder));
                 builder.WithTableVectorStore(vecStore);
-                builder.WithSchemaRetriever(new VectorSchemaRetriever(vecStore));
             });
-
-            var hasIndex = await SqlGen.HasTableVectorIndexAsync(input.ConnectionId);
-            if (hasIndex)
-            {
-                var count = await SqlGen.GetTableVectorIndexCountAsync(input.ConnectionId);
-                await SendDeltaAsync(context, $"已检测到现有向量索引（{count} 条记录）。\n\n");
-            }
 
             // 使用 OpenAI 官方 SDK 的流式Function Calling与用户交互
             // AI会根据对话内容决定何时调用generate_sql函数

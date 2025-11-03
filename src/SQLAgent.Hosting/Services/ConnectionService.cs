@@ -10,6 +10,10 @@ public class ConnectionService
 {
     private readonly IDatabaseConnectionManager _connectionManager;
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="connectionManager"></param>
     public ConnectionService(IDatabaseConnectionManager connectionManager)
     {
         _connectionManager = connectionManager;

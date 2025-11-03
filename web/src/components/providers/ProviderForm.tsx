@@ -4,6 +4,7 @@ import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Textarea } from '../ui/textarea';
 import { Switch } from '../ui/switch';
+import { TagInput } from '../ui/tag-input';
 import {
   Select,
   SelectContent,
@@ -26,7 +27,7 @@ export function ProviderForm({ provider, onSave, onCancel }: ProviderFormProps) 
     type: 'OpenAI',
     endpoint: '',
     apiKey: '',
-    availableModels: '',
+    availableModels: [],
     defaultModel: '',
     isEnabled: true,
     extraConfig: '',
@@ -34,16 +35,16 @@ export function ProviderForm({ provider, onSave, onCancel }: ProviderFormProps) 
 
   useEffect(() => {
     if (provider) {
-      // 处理 availableModels：如果是数组则转换成字符串，如果已是字符串则直接使用
-      const modelsString = Array.isArray(provider.availableModels)
-        ? provider.availableModels.join(', ')
-        : provider.availableModels;
+      // 处理 availableModels：确保是数组格式
+      const modelsArray = Array.isArray(provider.availableModels)
+        ? provider.availableModels
+        : [];
       setFormData({
         name: provider.name,
         type: provider.type,
         endpoint: provider.endpoint || '',
         apiKey: '', // 编辑时不显示加密的 API Key
-        availableModels: modelsString,
+        availableModels: modelsArray,
         defaultModel: provider.defaultModel || '',
         isEnabled: provider.isEnabled,
         extraConfig: provider.extraConfig || '',
@@ -52,7 +53,7 @@ export function ProviderForm({ provider, onSave, onCancel }: ProviderFormProps) 
       // 新建时设置默认模型
       setFormData((prev) => ({
         ...prev,
-        availableModels: COMMON_MODELS.OpenAI.join(', '),
+        availableModels: COMMON_MODELS.OpenAI,
       }));
     }
   }, [provider]);
@@ -60,11 +61,23 @@ export function ProviderForm({ provider, onSave, onCancel }: ProviderFormProps) 
   const handleTypeChange = (type: string) => {
     setFormData((prev) => {
       const models = COMMON_MODELS[type as keyof typeof COMMON_MODELS] || [];
+      let endpoint = prev.endpoint;
+      let apiKey = prev.apiKey;
+      
+      // 为不同提供商设置默认端点和 API Key
+      if (type === 'OpenAI') {
+        endpoint = '';
+      } else if (type === 'Ollama') {
+        endpoint = 'http://localhost:11434/v1';
+        apiKey = 'sk-ollama-local';
+      }
+      
       return {
         ...prev,
         type,
-        availableModels: models.join(', '),
-        endpoint: type === 'OpenAI' ? '' : prev.endpoint,
+        availableModels: models,
+        endpoint,
+        apiKey,
       };
     });
   };
@@ -103,12 +116,14 @@ export function ProviderForm({ provider, onSave, onCancel }: ProviderFormProps) 
             <SelectItem value="OpenAI">OpenAI</SelectItem>
             <SelectItem value="AzureOpenAI">Azure OpenAI</SelectItem>
             <SelectItem value="CustomOpenAI">自定义 OpenAI 兼容</SelectItem>
+            <SelectItem value="Ollama">Ollama</SelectItem>
           </SelectContent>
         </Select>
         <p className="text-sm text-muted-foreground">
           {formData.type === 'OpenAI' && '使用 OpenAI 官方 API'}
           {formData.type === 'AzureOpenAI' && '使用 Azure OpenAI 服务'}
           {formData.type === 'CustomOpenAI' && '使用自定义的 OpenAI 兼容端点'}
+          {formData.type === 'Ollama' && '使用 Ollama 本地模型服务'}
         </p>
       </div>
 
@@ -122,7 +137,9 @@ export function ProviderForm({ provider, onSave, onCancel }: ProviderFormProps) 
             placeholder={
               formData.type === 'AzureOpenAI'
                 ? 'https://your-resource.openai.azure.com'
-                : 'https://api.example.com/v1'
+                : formData.type === 'Ollama'
+                  ? 'http://localhost:11434/v1'
+                  : 'https://api.example.com/v1'
             }
             required={needsEndpoint}
           />
@@ -130,38 +147,37 @@ export function ProviderForm({ provider, onSave, onCancel }: ProviderFormProps) 
       )}
 
       <div className="space-y-2">
-        <Label htmlFor="apiKey">API 密钥 {!provider && '*'}</Label>
+        <Label htmlFor="apiKey">API 密钥 {!provider && formData.type !== 'Ollama' && '*'}</Label>
         <Input
           id="apiKey"
           type="password"
           value={formData.apiKey}
           onChange={(e) => setFormData({ ...formData, apiKey: e.target.value })}
           placeholder={provider ? '留空表示不修改现有密钥' : 'sk-...'}
-          required={!provider}
+          required={!provider && formData.type !== 'Ollama'}
         />
         <p className="text-sm text-muted-foreground">
-          {provider 
-            ? '仅在需要更新密钥时填写，留空则保持原密钥不变'
-            : '您的 API 密钥将被安全存储'
+          {formData.type === 'Ollama' 
+            ? 'Ollama 本地服务使用固定密钥 sk-ollama-local'
+            : provider 
+              ? '仅在需要更新密钥时填写，留空则保持原密钥不变'
+              : '您的 API 密钥将被安全存储'
           }
         </p>
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="models">可用模型 *</Label>
-        <Textarea
-          id="models"
-          value={formData.availableModels}
-          defaultValue={formData.availableModels}
-          onChange={(e) =>
-            setFormData({ ...formData, availableModels: e.target.value })
+        <TagInput
+          value={Array.isArray(formData.availableModels) ? formData.availableModels : []}
+          onChange={(tags) =>
+            setFormData({ ...formData, availableModels: tags })
           }
-          placeholder="gpt-4, gpt-3.5-turbo"
-          rows={3}
-          required
+          placeholder="输入模型名称后按回车添加，如: gpt-4"
+          className="min-h-20"
         />
         <p className="text-sm text-muted-foreground">
-          多个模型用逗号分隔
+          输入模型名称后按回车键添加标签
         </p>
       </div>
 

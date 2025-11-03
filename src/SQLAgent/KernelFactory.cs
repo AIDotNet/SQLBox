@@ -10,8 +10,8 @@ namespace SQLAgent
             string type = "OpenAI")
         {
             var kernelBuilder = Kernel.CreateBuilder();
-            
-            if (type == "OpenAI")
+
+            if (type is "OpenAI" or "Ollama")
             {
                 kernelBuilder.AddOpenAIChatCompletion(model, new Uri(endpoint), apiKey,
                     httpClient: new HttpClient(new OpenAIHandle()

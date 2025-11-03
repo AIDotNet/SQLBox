@@ -110,7 +110,6 @@ public class VectorIndexService
         {
             ConnectionString = _settings.VectorDbPath,
             CollectionName = _settings.VectorCollection,
-            DistanceMetric = _settings.DistanceMetric,
             AutoCreateCollection = _settings.AutoCreateCollection,
             CacheExpiration = _settings.VectorCacheExpireMinutes.HasValue
                 ? TimeSpan.FromMinutes(_settings.VectorCacheExpireMinutes.Value)
@@ -126,9 +125,7 @@ public class VectorIndexService
         SqlGen.Configure(b =>
         {
             b.WithConnectionManager(_connMgr);
-            b.WithSchemaIndexer(new EmbeddingSchemaIndexer(embedder));
             b.WithTableVectorStore(vecStore);
-            b.WithSchemaRetriever(new VectorSchemaRetriever(vecStore));
         });
     }
 }

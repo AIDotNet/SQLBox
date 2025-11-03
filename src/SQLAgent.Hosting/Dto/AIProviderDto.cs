@@ -23,8 +23,7 @@ public record AIProviderInput
     public string? ApiKey { get; init; }
     
     [Required(ErrorMessage = "至少需要配置一个模型")]
-    public string AvailableModels { get; init; } = string.Empty;
-    
+    public string[] AvailableModels { get; init; } 
     public string? DefaultModel { get; init; }
     
     public bool IsEnabled { get; init; } = true;

@@ -1,0 +1,15 @@
+[
+  {
+    "Id": "974f8401-adf8-424c-971c-814fa732ca2d",
+    "Name": "Ollama",
+    "Type": 3,
+    "Endpoint": "http://localhost:11434/v1",
+    "ApiKey": "sk-ollama-local",
+    "AvailableModels": "gpt-oss:20b-cloud",
+    "DefaultModel": "gpt-oss:20b-cloud",
+    "IsEnabled": true,
+    "ExtraConfig": "",
+    "CreatedAt": "2025-11-03T04:04:28.4009522Z",
+    "UpdatedAt": "2025-11-03T04:04:28.4010365Z"
+  }
+]

@@ -1,12 +1,13 @@
-using Serilog;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Scalar.AspNetCore;
-using SQLAgent.Entities;
+using Serilog;
 using SQLAgent.Facade;
 using SQLAgent.Hosting.Dto;
+using SQLAgent.Hosting.Extensions;
+using SQLAgent.Hosting.Services;
 using SQLAgent.Infrastructure;
 using SQLAgent.Infrastructure.Defaults;
-using System.Text.Json;
-using SQLAgent.Hosting.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +27,7 @@ builder.Host.UseSerilog((context, services, configuration) =>
 builder.Services.ConfigureHttpJsonOptions(options =>
 {
     // 支持字符串枚举
-    options.SerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
 
 // Add services to the container
@@ -52,10 +53,10 @@ builder.Services.AddSingleton<IDatabaseConnectionManager>(sp => new InMemoryData
 builder.Services.AddSingleton<IAIProviderManager>(sp => new InMemoryAIProviderManager(providersFile));
 
 // 注册服务
-builder.Services.AddScoped<SQLAgent.Hosting.Services.ConnectionService>();
-builder.Services.AddScoped<SQLAgent.Hosting.Services.ProvidersService>();
-builder.Services.AddScoped<SQLAgent.Hosting.Services.ChatService>();
-builder.Services.AddScoped<SQLAgent.Hosting.Services.VectorIndexService>();
+builder.Services.AddScoped<ConnectionService>();
+builder.Services.AddScoped<ProvidersService>();
+builder.Services.AddScoped<ChatService>();
+builder.Services.AddScoped<VectorIndexService>();
 
 // 绑定系统设置（提供默认参数），并尝试从 settings.json 覆盖（实现持久化加载）
 var systemSettings = builder.Configuration.GetSection("SystemSettings").Get<SystemSettings>() ?? new SystemSettings();
@@ -73,7 +74,6 @@ try
             systemSettings.EmbeddingModel = fileSettings.EmbeddingModel;
             systemSettings.VectorDbPath = fileSettings.VectorDbPath;
             systemSettings.VectorCollection = fileSettings.VectorCollection;
-            systemSettings.DistanceMetric = fileSettings.DistanceMetric;
             systemSettings.AutoCreateCollection = fileSettings.AutoCreateCollection;
             systemSettings.VectorCacheExpireMinutes = fileSettings.VectorCacheExpireMinutes;
             systemSettings.DefaultChatProviderId = fileSettings.DefaultChatProviderId;

@@ -121,7 +121,6 @@ public static class EndpointRouteBuilderExtensions
                             settings.EmbeddingModel = fileSettings.EmbeddingModel;
                             settings.VectorDbPath = fileSettings.VectorDbPath;
                             settings.VectorCollection = fileSettings.VectorCollection;
-                            settings.DistanceMetric = fileSettings.DistanceMetric;
                             settings.AutoCreateCollection = fileSettings.AutoCreateCollection;
                             settings.VectorCacheExpireMinutes = fileSettings.VectorCacheExpireMinutes;
                             settings.DefaultChatProviderId = fileSettings.DefaultChatProviderId;
@@ -144,7 +143,6 @@ public static class EndpointRouteBuilderExtensions
                 settings.EmbeddingModel = payload.EmbeddingModel;
                 settings.VectorDbPath = payload.VectorDbPath;
                 settings.VectorCollection = payload.VectorCollection;
-                settings.DistanceMetric = payload.DistanceMetric;
                 settings.AutoCreateCollection = payload.AutoCreateCollection;
                 settings.VectorCacheExpireMinutes = payload.VectorCacheExpireMinutes;
                 settings.DefaultChatProviderId = payload.DefaultChatProviderId;

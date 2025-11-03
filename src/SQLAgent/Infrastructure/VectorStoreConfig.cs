@@ -31,13 +31,6 @@ public sealed class VectorStoreConfig
     /// Vector dimensions (determined by embedding model, auto-detected at runtime)
     /// </summary>
     public int? Dimensions { get; set; }
-
-    /// <summary>
-    /// 距离度量方式
-    /// Distance metric
-    /// </summary>
-    public DistanceMetric DistanceMetric { get; set; } = DistanceMetric.Cosine;
-
     /// <summary>
     /// 是否在启动时自动创建集合/表
     /// Whether to auto-create collection/table on startup
@@ -74,20 +67,4 @@ public enum VectorStoreProvider
     
     /// <summary>In-memory (for testing)</summary>
     InMemory
-}
-
-/// <summary>
-/// 距离度量方式
-/// Distance metric
-/// </summary>
-public enum DistanceMetric
-{
-    /// <summary>余弦相似度 (推荐用于文本嵌入)</summary>
-    Cosine,
-    
-    /// <summary>欧氏距离</summary>
-    Euclidean,
-    
-    /// <summary>点积</summary>
-    DotProduct
 }

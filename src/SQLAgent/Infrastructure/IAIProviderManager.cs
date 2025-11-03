@@ -14,7 +14,9 @@ public interface IAIProviderManager
     Task<AIProvider?> GetAsync(string id, CancellationToken ct = default);
     Task<AIProvider> AddAsync(AIProvider provider, CancellationToken ct = default);
     Task<AIProvider> UpdateAsync(AIProvider provider, CancellationToken ct = default);
+    
     Task<bool> DeleteAsync(string id, CancellationToken ct = default);
+    
     Task<AIProvider?> GetDefaultAsync(CancellationToken ct = default);
 }
 
@@ -26,7 +28,7 @@ public class InMemoryAIProviderManager : IAIProviderManager
     private readonly Dictionary<string, AIProvider> _providers = new();
     private readonly SemaphoreSlim _lock = new(1, 1);
     private readonly string? _filePath;
-    private readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+    private readonly JsonSerializerOptions _jsonOptions = new() { WriteIndented = true };
 
     /// <summary>
     /// 纯内存构造（不持久化）
