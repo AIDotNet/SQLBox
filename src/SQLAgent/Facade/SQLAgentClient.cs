@@ -16,7 +16,6 @@ namespace SQLAgent.Facade;
 public class SQLAgentClient
 {
     private readonly SQLAgentOptions _options;
-    private readonly string _systemPrompt;
     private readonly Kernel _kernel = null!;
     private readonly SqlTool _sqlResult;
 
@@ -26,10 +25,9 @@ public class SQLAgentClient
     /// <returns></returns>
     private readonly bool _useVectorSearch = false;
 
-    internal SQLAgentClient(SQLAgentOptions options, string systemPrompt)
+    internal SQLAgentClient(SQLAgentOptions options)
     {
         _options = options;
-        _systemPrompt = systemPrompt;
 
         _useVectorSearch = !string.IsNullOrWhiteSpace(options.EmbeddingModel) &&
                            !string.IsNullOrWhiteSpace(options.DatabaseIndexConnectionString);
@@ -44,7 +42,7 @@ public class SQLAgentClient
         var chatCompletion = kernel.GetRequiredService<IChatCompletionService>();
 
         var history = new ChatHistory();
-        history.AddSystemMessage(_systemPrompt);
+        history.AddSystemMessage(_options.SqlBotSystemPrompt);
 
         history.AddUserMessage([
             new TextContent(input.Query),

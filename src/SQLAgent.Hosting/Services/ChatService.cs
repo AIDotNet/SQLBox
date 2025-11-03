@@ -98,7 +98,7 @@ public class ChatService(
                     $"Embedding provider '{embeddingProviderId}' not found");
                 return;
             }
-            
+
             // 使用 OpenAI 官方 SDK 的流式Function Calling与用户交互
             // AI会根据对话内容决定何时调用generate_sql函数
             try
@@ -285,15 +285,19 @@ public class ChatService(
                                            input.Messages.LastOrDefault(m => m.Role.ToLower() == "user")?.Content ??
                                            "未知查询";
 
-                            var sqlBoxBuilder = new SQLAgentBuilder();
-                            sqlBoxBuilder.WithDatabaseType(SqlType.Sqlite, connection.ConnectionString);
-                            sqlBoxBuilder.WithLLMProvider(input.Model, provider.ApiKey, provider.Endpoint ?? "",
-                                provider.Type);
-                            sqlBoxBuilder.WithSqlBotSystemPrompt(SqlType.Sqlite);
+                            var serviceCollection = new ServiceCollection();
 
-                            var sqlBot = sqlBoxBuilder.Build();
+                            var sqlBoxBuilder = new SQLAgentBuilder(serviceCollection);
+                            sqlBoxBuilder
+                                .WithDatabaseType(SqlType.Sqlite, connection.ConnectionString)
+                                .WithLLMProvider(input.Model, provider.ApiKey, provider.Endpoint ?? "", provider.Type)
+                                .WithSqlBotSystemPrompt(SqlType.Sqlite)
+                                .Build();
+                            
+                            var serviceProvider = serviceCollection.BuildServiceProvider();
+                            var agentClient = serviceProvider.GetRequiredService<SQLAgentClient>();
 
-                            var result = await sqlBot.ExecuteAsync(new ExecuteInput()
+                            var result = await agentClient.ExecuteAsync(new ExecuteInput()
                             {
                                 ConnectionId = connection.Id,
                                 Query = question

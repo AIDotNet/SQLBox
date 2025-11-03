@@ -68,4 +68,9 @@ public class SQLAgentOptions
     /// 是否允许写操作
     /// </summary>
     public bool AllowWrite { get; set; } = true;
+
+    /// <summary>
+    /// SQL 机器人系统提示语
+    /// </summary>
+    public string SqlBotSystemPrompt { get; set; }
 }
