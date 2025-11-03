@@ -1,3 +1,4 @@
+using SQLAgent.Infrastructure;
 using System;
 
 namespace SQLAgent.Entities;
@@ -25,7 +26,23 @@ public sealed class DatabaseConnection
     /// Database type (e.g., "sqlite", "mssql", "postgresql", "mysql", etc.)
     /// </summary>
     public string DatabaseType { get; init; } = string.Empty;
-    
+
+    public SqlType SqlType
+    {
+        get
+        {
+            return DatabaseType.ToLower() switch
+            {
+                "sqlite" => SqlType.Sqlite,
+                "sqlserver" => SqlType.SqlServer,
+                "mssql" => SqlType.SqlServer,
+                "postgresql" => SqlType.PostgreSql,
+                "mysql" => SqlType.MySql,
+                _ => throw new NotSupportedException()
+            };
+        }
+    }
+
     /// <summary>
     /// 数据库连接字符串
     /// Database connection string

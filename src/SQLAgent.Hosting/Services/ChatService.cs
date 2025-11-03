@@ -289,11 +289,11 @@ public class ChatService(
 
                             var sqlBoxBuilder = new SQLAgentBuilder(serviceCollection);
                             sqlBoxBuilder
-                                .WithDatabaseType(SqlType.Sqlite, connection.ConnectionString)
+                                .WithDatabaseType(connection.SqlType, connection.ConnectionString)
                                 .WithLLMProvider(input.Model, provider.ApiKey, provider.Endpoint ?? "", provider.Type)
-                                .WithSqlBotSystemPrompt(SqlType.Sqlite)
+                                .WithSqlBotSystemPrompt(connection.SqlType)
                                 .Build();
-                            
+
                             var serviceProvider = serviceCollection.BuildServiceProvider();
                             var agentClient = serviceProvider.GetRequiredService<SQLAgentClient>();
 

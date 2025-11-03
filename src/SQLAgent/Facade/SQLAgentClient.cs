@@ -20,7 +20,7 @@ public class SQLAgentClient
     private static readonly ActivitySource ActivitySource = new("SQLAgent");
 
     private readonly SQLAgentOptions _options;
-    private readonly IDatabaseService _databaseService;
+    internal readonly IDatabaseService _databaseService;
     private readonly ILogger<SQLAgentClient> _logger;
     private readonly SqlTool _sqlResult;
 
@@ -310,15 +310,8 @@ public class SQLAgentClient
 
         try
         {
-            var option = new JsonSerializerOptions
-            {
-                WriteIndented = false,
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                // 中文字符不进行转义
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-            };
             // 将动态结果转换为可序列化的格式
-            var dataJson = JsonSerializer.Serialize(queryResults, option);
+            var dataJson = JsonSerializer.Serialize(queryResults, SQLAgentJsonOptions.DefaultOptions);
 
             // 替换各种可能的占位符
             var result = optionTemplate;
@@ -466,65 +459,13 @@ public class SQLAgentClient
             int maxResults = 20)
         {
             maxResults = Math.Clamp(maxResults, 1, 100);
-            if (keywords == null) keywords = Array.Empty<string>();
+            if (keywords == null) keywords = [];
 
             try
             {
-                await using var connection = new SqliteConnection(sqlAgentClient._options.ConnectionString);
-                await connection.OpenAsync();
+                var names = await sqlAgentClient._databaseService.SearchTables(keywords, maxResults);
 
-                string sql;
-                var dp = new DynamicParameters();
-
-                if (keywords.Length == 0)
-                {
-                    sql = @"
-                        SELECT name
-                        FROM sqlite_master
-                        WHERE type='table' AND name NOT LIKE 'sqlite_%'
-                        LIMIT @maxResults;";
-                    dp.Add("maxResults", maxResults);
-                }
-                else
-                {
-                    var limitKeys = Math.Min(keywords.Length, 10);
-                    var conds = new List<string>();
-                    for (int i = 0; i < limitKeys; i++)
-                    {
-                        var param = $"k{i}";
-                        dp.Add(param, keywords[i]);
-                        conds.Add($"(name LIKE '%' || @{param} || '%' OR sql LIKE '%' || @{param} || '%')");
-                    }
-
-                    sql = $@"
-                        SELECT name
-                        FROM sqlite_master
-                        WHERE type='table' AND name NOT LIKE 'sqlite_%'
-                          AND ({string.Join(" OR ", conds)})
-                        LIMIT @maxResults;";
-                    dp.Add("maxResults", maxResults);
-                }
-
-                var rows = (await connection.QueryAsync(sql, dp)).ToArray();
-                var names = new List<string>();
-                foreach (var r in rows)
-                {
-                    if (r is IDictionary<string, object> d && d.TryGetValue("name", out var n))
-                        names.Add(n?.ToString() ?? string.Empty);
-                    else
-                    {
-                        try
-                        {
-                            names.Add((r as dynamic)?.name?.ToString() ?? string.Empty);
-                        }
-                        catch
-                        {
-                        }
-                    }
-                }
-
-                return JsonSerializer.Serialize(names,
-                    new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+                return names;
             }
             catch (Exception ex)
             {
@@ -546,97 +487,17 @@ public class SQLAgentClient
              """)]
         public async Task<string> GetTableSchema(
             [Description("Exact table name to get schema for")]
-            string tableName)
+            string[] tableName)
         {
-            if (string.IsNullOrWhiteSpace(tableName))
+            if (tableName.Length == 0)
             {
-                return JsonSerializer.Serialize(new { error = "tableName is required" });
+                return JsonSerializer.Serialize(new { error = "Table name is required." });
             }
 
             try
             {
-                await using var connection = new SqliteConnection(sqlAgentClient._options.ConnectionString);
-                await connection.OpenAsync();
-
-                var master = await connection.QueryFirstOrDefaultAsync(
-                    "SELECT name, sql FROM sqlite_master WHERE type='table' AND name = @table;",
-                    new { table = tableName });
-
-                if (master == null)
-                {
-                    return JsonSerializer.Serialize(new { error = "table not found" });
-                }
-
-                string? createSql = null;
-                if (master is IDictionary<string, object> md && md.TryGetValue("sql", out var s))
-                    createSql = s?.ToString();
-                else
-                {
-                    try
-                    {
-                        createSql = (master as dynamic)?.sql?.ToString();
-                    }
-                    catch
-                    {
-                    }
-                }
-
-                var safeName = tableName.Replace("\"", "\"\"");
-
-                // columns
-                var pragmaCols = await connection.QueryAsync($"PRAGMA table_info(\"{safeName}\");");
-                var columns = new List<object>();
-                foreach (var c in pragmaCols)
-                {
-                    if (c is IDictionary<string, object> colDict)
-                    {
-                        colDict.TryGetValue("name", out var colName);
-                        colDict.TryGetValue("type", out var colType);
-                        colDict.TryGetValue("notnull", out var colNotNull);
-                        colDict.TryGetValue("pk", out var colPk);
-                        colDict.TryGetValue("dflt_value", out var colDefault);
-
-                        columns.Add(new
-                        {
-                            name = colName,
-                            type = colType,
-                            notnull = colNotNull,
-                            pk = colPk,
-                            defaultValue = colDefault
-                        });
-                    }
-                    else
-                    {
-                        try
-                        {
-                            columns.Add(new
-                            {
-                                name = (c as dynamic)?.name,
-                                type = (c as dynamic)?.type,
-                                notnull = (c as dynamic)?.notnull,
-                                pk = (c as dynamic)?.pk,
-                                defaultValue = (c as dynamic)?.dflt_value
-                            });
-                        }
-                        catch
-                        {
-                        }
-                    }
-                }
-
-                // indexes
-                var indexes = await connection.QueryAsync($"PRAGMA index_list(\"{safeName}\");");
-
-                var result = new
-                {
-                    table = tableName,
-                    createSql = createSql,
-                    columns = columns,
-                    indexes = indexes,
-                };
-
-                return JsonSerializer.Serialize(result,
-                    new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+                var result = await sqlAgentClient._databaseService.GetTableSchema(tableName);
+                return JsonSerializer.Serialize(result,SQLAgentJsonOptions.DefaultOptions);
             }
             catch (Exception ex)
             {
