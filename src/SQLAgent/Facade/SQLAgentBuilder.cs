@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Headers;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using SQLAgent.Entities;
 using SQLAgent.Infrastructure;
 using SQLAgent.Infrastructure.Providers;
@@ -38,7 +39,8 @@ public class SQLAgentBuilder(IServiceCollection service)
         {
             var options = provider.GetRequiredService<SQLAgentOptions>();
             var databaseService = provider.GetRequiredService<IDatabaseService>();
-            return new SQLAgentClient(options, databaseService);
+            var logger = provider.GetRequiredService<ILogger<SQLAgentClient>>();
+            return new SQLAgentClient(options, databaseService, logger);
         });
 
         switch (_options.SqlType)

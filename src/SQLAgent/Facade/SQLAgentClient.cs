@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using Dapper;
 using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Logging;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
@@ -15,8 +17,11 @@ namespace SQLAgent.Facade;
 
 public class SQLAgentClient
 {
+    private static readonly ActivitySource ActivitySource = new("SQLAgent");
+
     private readonly SQLAgentOptions _options;
     private readonly IDatabaseService _databaseService;
+    private readonly ILogger<SQLAgentClient> _logger;
     private readonly SqlTool _sqlResult;
 
     /// <summary>
@@ -25,10 +30,11 @@ public class SQLAgentClient
     /// <returns></returns>
     private readonly bool _useVectorDatabaseIndex = false;
 
-    internal SQLAgentClient(SQLAgentOptions options, IDatabaseService databaseService)
+    internal SQLAgentClient(SQLAgentOptions options, IDatabaseService databaseService, ILogger<SQLAgentClient> logger)
     {
         _options = options;
         _databaseService = databaseService;
+        _logger = logger;
 
         _useVectorDatabaseIndex = options.UseVectorDatabaseIndex;
 
@@ -42,6 +48,11 @@ public class SQLAgentClient
     /// <returns></returns>
     public async Task<List<SQLAgentResult>> ExecuteAsync(ExecuteInput input)
     {
+        using var activity = ActivitySource.StartActivity("SQLAgent.Execute", ActivityKind.Internal);
+        activity?.SetTag("sqlagent.query", input.Query);
+
+        _logger.LogInformation("Starting SQL Agent execution for query: {Query}", input.Query);
+
         var kernel = KernelFactory.CreateKernel(_options.Model, _options.APIKey, _options.Endpoint,
             (builder => { builder.Plugins.AddFromObject(_sqlResult, "sql"); }));
         var chatCompletion = kernel.GetRequiredService<IChatCompletionService>();
@@ -60,6 +71,8 @@ public class SQLAgentClient
                              """)
         ]);
 
+        _logger.LogInformation("Calling AI model to generate SQL for query: {Query}", input.Query);
+
         await chatCompletion.GetChatMessageContentsAsync(history,
             new OpenAIPromptExecutionSettings()
             {
@@ -68,8 +81,12 @@ public class SQLAgentClient
                 ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions,
             }, kernel);
 
+        _logger.LogInformation("AI model call completed, processing {Count} SQL results", _sqlResult.SqlBoxResult.Count);
+
         foreach (var _sqlTool in _sqlResult.SqlBoxResult)
         {
+            _logger.LogInformation("Processing SQL result: IsQuery={IsQuery}, SQL={Sql}", _sqlTool.IsQuery, _sqlTool.Sql);
+
             // 判断SQL是否是查询
             if (_sqlTool.IsQuery)
             {
@@ -170,6 +187,8 @@ public class SQLAgentClient
                         """)
                 ]);
 
+                _logger.LogInformation("Generating ECharts option for SQL query");
+
                 var result = await chatCompletion.GetChatMessageContentAsync(echartsHistory,
                     new OpenAIPromptExecutionSettings()
                     {
@@ -186,6 +205,12 @@ public class SQLAgentClient
 
                     // 将 ECharts option 保存到结果对象中
                     _sqlTool.EchartsOption = processedOption;
+
+                    _logger.LogInformation("ECharts option generated and data injected successfully");
+                }
+                else
+                {
+                    _logger.LogWarning("No ECharts option generated or no query results to inject");
                 }
             }
             else
@@ -194,6 +219,7 @@ public class SQLAgentClient
             }
         }
 
+        _logger.LogInformation("SQL Agent execution completed, returning {Count} results", _sqlResult.SqlBoxResult.Count);
 
         return _sqlResult.SqlBoxResult;
     }
@@ -203,18 +229,23 @@ public class SQLAgentClient
     /// </summary>
     private async Task<dynamic[]?> ExecuteSqliteQueryAsync(SQLAgentResult result)
     {
+        using var activity = ActivitySource.StartActivity("SQLAgent.ExecuteQuery", ActivityKind.Internal);
+        activity?.SetTag("sqlagent.sql", result.Sql);
+
+        _logger.LogInformation("Executing SQL query: {Sql}", result.Sql);
+
         try
         {
             // 使用 Dapper 执行参数化查询
             var queryResult = await _databaseService.ExecuteSqliteQueryAsync(result.Sql, result.Parameters);
-            Console.WriteLine($"\n查询成功执行，返回 {queryResult.Count()} 行数据");
+            _logger.LogInformation("Query executed successfully, returned {Count} rows", queryResult?.Count() ?? 0);
 
-            return queryResult.ToArray();
+            return queryResult?.ToArray();
         }
         catch (Exception ex)
         {
             result.ErrorMessage = $"查询执行失败: {ex.Message}";
-            Console.WriteLine($"\n错误: {result.ErrorMessage}");
+            _logger.LogError(ex, "Query execution failed: {ErrorMessage}", result.ErrorMessage);
 
             throw;
         }
@@ -225,18 +256,23 @@ public class SQLAgentClient
     /// </summary>
     private async Task<int> ExecuteSqliteNonQueryAsync(SQLAgentResult result)
     {
+        using var activity = ActivitySource.StartActivity("SQLAgent.ExecuteNonQuery", ActivityKind.Internal);
+        activity?.SetTag("sqlagent.sql", result.Sql);
+
+        _logger.LogInformation("Executing SQL non-query: {Sql}", result.Sql);
+
         // 检查是否允许写操作
         if (!_options.AllowWrite)
         {
             result.ErrorMessage = "写操作已被禁用。请在配置中启用 AllowWrite 选项。";
-            Console.WriteLine($"\n错误: {result.ErrorMessage}");
+            _logger.LogWarning("Write operation denied: {ErrorMessage}", result.ErrorMessage);
             return 0;
         }
 
         if (string.IsNullOrWhiteSpace(_options.ConnectionString))
         {
             result.ErrorMessage = "数据库连接字符串未配置";
-            Console.WriteLine($"\n错误: {result.ErrorMessage}");
+            _logger.LogError("Database connection string not configured");
             return 0;
         }
 
@@ -245,13 +281,13 @@ public class SQLAgentClient
             // 使用 Dapper 执行参数化非查询操作
             var affectedRows = await _databaseService.ExecuteSqliteNonQueryAsync(result.Sql, result.Parameters);
 
-            Console.WriteLine($"\n非查询操作成功执行，影响了 {affectedRows} 行数据");
+            _logger.LogInformation("Non-query operation executed successfully, affected {AffectedRows} rows", affectedRows);
             return affectedRows;
         }
         catch (Exception ex)
         {
             result.ErrorMessage = $"非查询操作执行失败: {ex.Message}";
-            Console.WriteLine($"\n错误: {result.ErrorMessage}");
+            _logger.LogError(ex, "Non-query operation failed: {ErrorMessage}", result.ErrorMessage);
             throw;
         }
     }
@@ -261,8 +297,14 @@ public class SQLAgentClient
     /// </summary>
     private string InjectDataIntoEchartsOption(string optionTemplate, dynamic[] queryResults)
     {
+        using var activity = ActivitySource.StartActivity("SQLAgent.InjectData", ActivityKind.Internal);
+        activity?.SetTag("sqlagent.data_count", queryResults?.Length ?? 0);
+
+        _logger.LogInformation("Injecting data into ECharts option template");
+
         if (string.IsNullOrWhiteSpace(optionTemplate) || queryResults == null || queryResults.Length == 0)
         {
+            _logger.LogWarning("Invalid input for data injection: optionTemplate is empty or queryResults is null/empty");
             return optionTemplate;
         }
 
@@ -320,14 +362,21 @@ public class SQLAgentClient
                     result = result.Replace("{DATA_PLACEHOLDER_X}", xAxisJson);
                     result = result.Replace("{{DATA_PLACEHOLDER_Y}}", yAxisJson);
                     result = result.Replace("{DATA_PLACEHOLDER_Y}", yAxisJson);
+
+                    _logger.LogInformation("Data injection completed for X and Y axes");
+                }
+                else
+                {
+                    _logger.LogInformation("Data injection completed for single data placeholder");
                 }
             }
 
+            _logger.LogInformation("Data injection into ECharts option completed successfully");
             return result;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"\n警告: 数据注入失败 - {ex.Message}");
+            _logger.LogWarning(ex, "Data injection failed: {Message}", ex.Message);
             return optionTemplate;
         }
     }
