@@ -16,25 +16,30 @@ namespace SQLAgent.Facade;
 public class SQLAgentClient
 {
     private readonly SQLAgentOptions _options;
-    private readonly Kernel _kernel = null!;
+    private readonly IDatabaseService _databaseService;
     private readonly SqlTool _sqlResult;
 
     /// <summary>
     /// 是否启用向量检索
     /// </summary>
     /// <returns></returns>
-    private readonly bool _useVectorSearch = false;
+    private readonly bool _useVectorDatabaseIndex = false;
 
-    internal SQLAgentClient(SQLAgentOptions options)
+    internal SQLAgentClient(SQLAgentOptions options, IDatabaseService databaseService)
     {
         _options = options;
+        _databaseService = databaseService;
 
-        _useVectorSearch = !string.IsNullOrWhiteSpace(options.EmbeddingModel) &&
-                           !string.IsNullOrWhiteSpace(options.DatabaseIndexConnectionString);
+        _useVectorDatabaseIndex = options.UseVectorDatabaseIndex;
 
         _sqlResult = new SqlTool(this);
     }
 
+    /// <summary>
+    /// 执行 SQL 代理请求
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
     public async Task<List<SQLAgentResult>> ExecuteAsync(ExecuteInput input)
     {
         var kernel = KernelFactory.CreateKernel(_options.Model, _options.APIKey, _options.Endpoint,
@@ -49,7 +54,7 @@ public class SQLAgentClient
             new TextContent(PromptConstants.SQLGeneratorSystemRemindPrompt),
             new TextContent($"""
                              <user-env>
-                             {(_options.AllowWrite ? "Database write operations are allowed." : "Database write operations are NOT allowed.")}
+                             {(_options.AllowWrite ? "The user has granted you the permission to directly manipulate the database, including creating, updating and deleting records." : "Database write operations are NOT allowed.")}
                              The database type is {_options.SqlType}.
                              <user-env>
                              """)
@@ -185,11 +190,7 @@ public class SQLAgentClient
             }
             else
             {
-                // 执行非查询操作（INSERT, UPDATE, DELETE, CREATE, DROP 等）
-                if (_options.SqlType == SqlType.Sqlite)
-                {
-                    await ExecuteSqliteNonQueryAsync(_sqlTool);
-                }
+                await ExecuteSqliteNonQueryAsync(_sqlTool);
             }
         }
 
@@ -204,25 +205,8 @@ public class SQLAgentClient
     {
         try
         {
-            await using var connection = new SqliteConnection(_options.ConnectionString);
-            await connection.OpenAsync();
-
-            var param = new List<KeyValuePair<string, object>>();
-            foreach (var parameter in result.Parameters)
-            {
-                param.Add(new KeyValuePair<string, object>(parameter.Name, parameter.Value));
-            }
-
             // 使用 Dapper 执行参数化查询
-            var queryResult = await connection.QueryAsync(
-                result.Sql, param,
-                commandType: CommandType.Text
-            );
-
-            // 将查询结果存储到 result 对象中（如果需要的话）
-            // 这里可以根据需要处理查询结果
-            // 例如: result.Data = queryResult.ToList();
-
+            var queryResult = await _databaseService.ExecuteSqliteQueryAsync(result.Sql, result.Parameters);
             Console.WriteLine($"\n查询成功执行，返回 {queryResult.Count()} 行数据");
 
             return queryResult.ToArray();
@@ -258,26 +242,8 @@ public class SQLAgentClient
 
         try
         {
-            await using var connection = new SqliteConnection(_options.ConnectionString);
-            await connection.OpenAsync();
-
-            var param = new List<KeyValuePair<string, object>>();
-            foreach (var parameter in result.Parameters)
-            {
-                if (!parameter.Name.StartsWith("@"))
-                {
-                    parameter.Name = "@" + parameter.Name;
-                }
-
-                param.Add(new KeyValuePair<string, object>(parameter.Name, parameter.Value));
-            }
-
             // 使用 Dapper 执行参数化非查询操作
-            var affectedRows = await connection.ExecuteAsync(
-                result.Sql,
-                param,
-                commandType: CommandType.Text
-            );
+            var affectedRows = await _databaseService.ExecuteSqliteNonQueryAsync(result.Sql, result.Parameters);
 
             Console.WriteLine($"\n非查询操作成功执行，影响了 {affectedRows} 行数据");
             return affectedRows;
@@ -392,7 +358,7 @@ public class SQLAgentClient
 
     public class SqlTool(SQLAgentClient sqlAgentClient)
     {
-        public List<SQLAgentResult> SqlBoxResult = new();
+        public readonly List<SQLAgentResult> SqlBoxResult = new();
 
         [KernelFunction("Write"), Description(
              """

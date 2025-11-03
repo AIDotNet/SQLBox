@@ -1,13 +1,14 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Net.Http.Headers;
+using Microsoft.Extensions.DependencyInjection;
 using SQLAgent.Entities;
 using SQLAgent.Infrastructure;
+using SQLAgent.Infrastructure.Providers;
 
 namespace SQLAgent.Facade;
 
 public class SQLAgentBuilder(IServiceCollection service)
 {
     private readonly SQLAgentOptions _options = new();
-
 
     public void Build()
     {
@@ -32,12 +33,23 @@ public class SQLAgentBuilder(IServiceCollection service)
         }
 
         // Configure the SQLAgentClient with the options and system prompt
-        service.AddSingleton<SQLAgentOptions>(_options);
-        service.AddTransient<SQLAgentClient>((provider =>
+        service.AddSingleton<SQLAgentOptions>(_ => _options);
+        service.AddTransient<SQLAgentClient>(provider =>
         {
             var options = provider.GetRequiredService<SQLAgentOptions>();
-            return new SQLAgentClient(options);
-        }));
+            var databaseService = provider.GetRequiredService<IDatabaseService>();
+            return new SQLAgentClient(options, databaseService);
+        });
+
+        switch (_options.SqlType)
+        {
+            case SqlType.Sqlite:
+                service.AddSingleton<IDatabaseService, SQLiteDatabaseService>();
+                break;
+            case SqlType.PostgreSql:
+                service.AddSingleton<IDatabaseService, PostgreSQLDatabaseService>();
+                break;
+        }
     }
 
     public SQLAgentBuilder WithDatabaseType(SqlType sqlType, string connectionString)
